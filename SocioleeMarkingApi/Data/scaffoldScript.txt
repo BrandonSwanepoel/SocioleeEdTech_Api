@@ -1,0 +1,1 @@
+﻿dotnet ef dbcontext scaffold "Server=socioleedesign.database.windows.net,1433;Database=SocioleeDesign;User=socioleedesign;Password=Govettie27;TrustServerCertificate=True"  Microsoft.EntityFrameworkCore.SqlServer --output-dir Models/Database --force --no-build

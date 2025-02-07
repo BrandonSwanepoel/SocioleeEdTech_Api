@@ -1,0 +1,41 @@
+﻿@using RazorHtmlEmails.RazorClassLib.Views.Models
+@model SubscriptionExpiryReminderViewModel
+@{
+    ViewData["ExpiryDate"] = Model.expiryDate;
+}
+<div style="background-color: black; color: white; padding: 20px; border-radius: 10px;">
+    <h2 align="center" style="color: #8d75f6">Your subscription expires in 7 days.</h2>
+    <p style="font-size: 12px; color: white !important;">
+        If you would like to cancel your subscription then follow the steps below.
+    </p>
+    <br />
+    <section>
+        <h4 style="font-size: 12px; color: white !important;">
+            Steps to cancel subsciption?
+        </h4>
+        <ul>
+            <li style="font-size: 12px; color: white !important;">Sign into your Sociolee Design account.</li>
+            <li style="font-size: 12px; color: white !important;">Click 'Profile'.</li>
+            <li style="font-size: 12px; color: white !important;">Click 'Subscription'.</li>
+            <li style="font-size: 12px; color: white !important;">Click 'Cancel subscription'.</li>
+        </ul>
+    </section>
+    <br />
+    <p style="font-size: 12px; color: white !important;">
+        You need to cancel your subscription before <b>@ViewData["ExpiryDate"]</b> or your subscription will auto renew.
+    </p>
+    <br />
+    <p style="font-size: 12px; color: white !important;">
+        If you have any questions, just reply to this email — we're always happy to help.
+    </p>
+    <br />
+    <p style="font-size: 12px; color: white !important;">
+        Sincerely,
+    </p>
+
+    <p style="font-size: 12px; color: white !important;">
+        Sociolee Design team
+    </p>
+</div>
+
+

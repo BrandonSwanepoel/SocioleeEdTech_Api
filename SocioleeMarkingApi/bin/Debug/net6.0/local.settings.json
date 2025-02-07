@@ -1,0 +1,7 @@
+﻿{
+  "IsEncrypted": false,
+  "Values": {
+    "SQLAZURECONNSTR_DefaultConnection": "Server=tcp:socioleedesign.database.windows.net,1433;Initial Catalog=SocioleeDesign;Persist Security Info=False;User ID=socioleedesign;Password=Govettie27;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+  }
+}
+

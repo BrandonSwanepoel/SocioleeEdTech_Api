@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/SocioleeDesign-api/SocioleeDesign_api.csproj": {}
+  },
+  "projects": {
+    "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/SocioleeDesign-api/SocioleeDesign_api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/SocioleeDesign-api/SocioleeDesign_api.csproj",
+        "projectName": "SocioleeDesign_api",
+        "projectPath": "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/SocioleeDesign-api/SocioleeDesign_api.csproj",
+        "packagesPath": "/Users/brandonswanepoel/.nuget/packages/",
+        "outputPath": "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/SocioleeDesign-api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/brandonswanepoel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/7.0.310/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj": {
+                "projectPath": "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj"
+              },
+              "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj": {
+                "projectPath": "/Users/brandonswanepoel/Documents/CodingProjects/SocioleeDesign/SocioleeDesign-api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.16.0, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.61.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Logging.AzureAppServices": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "PayFast": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
+            "PayFast.AspNet": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
+            "axios": {
+              "target": "Package",
+              "version": "[0.16.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

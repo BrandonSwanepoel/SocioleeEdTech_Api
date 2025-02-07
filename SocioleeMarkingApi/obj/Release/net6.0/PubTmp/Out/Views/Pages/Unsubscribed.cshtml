@@ -1,0 +1,19 @@
+﻿@using RazorHtmlEmails.RazorClassLib.Views.Models
+@model SubscriptionTypeModel
+@{
+    if (Model.subscriptionType == "Message")
+    {
+        ViewData["EmailTitle"] = $"Unsubscribed from review message email alerts";
+    }else if(Model.subscriptionType == "Review") {
+        ViewData["EmailTitle"] = $"Unsubscribed from new business review email alerts";
+    }
+    else if(Model.subscriptionType == "Marketing"){
+        ViewData["EmailTitle"] = $"Unsubscribed from marketing email alerts";
+    }
+}
+
+<h4>
+    You will not receive this type of email alerts anymore.
+</h4>
+
+<br />

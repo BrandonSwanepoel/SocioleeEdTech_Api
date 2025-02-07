@@ -1,0 +1,38 @@
+﻿@using RazorHtmlEmails.RazorClassLib.Views.Models
+@using RazorHtmlEmails.RazorClassLib.Views.Shared
+@model UrlViewModel
+
+<div style="background-color: white; color: #444444 !important; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 20px rgba(49, 140, 252, 0.02), 0px 0px 20px rgba(49, 140, 252, 0.028), 0px 0px 20px rgba(49, 140, 252, 0.035), 0px 0px 20px rgba(49, 140, 252, 0.042), 0px 0px 20px rgba(49, 140, 252, 0.05), 0px 0px 20px rgba(49, 140, 252, 0.07); border: rgb(49 140 252 / 74%) 1px solid; ">
+    <h3 style="font-size: 20px; font-weight: bold; color: rgb(49 140 252 / 74%) !important;">
+        Confirm email address
+    </h3>
+
+    <h3 style="font-size: 14px; color: #444444;">
+        Hi @Model.username,
+    </h3>
+    <p style="font-size: 12px; color: #444444 !important;">
+        Your email address has been updated.
+    </p>
+    <p style="font-size: 12px; color: #444444 !important;">
+        Log in again with the new email address then please enter the code below on the email verification page.
+    </p>
+
+    <br />
+    <div style="font-size: 18px; font-weight: bold; color: #444444 !important;">
+        @Model.url
+    </div>
+    <br />
+
+    <p style="font-size: 12px; color: #444444 !important;">
+        If you have any questions, just reply to this email — we're always happy to help.
+    </p>
+
+    <br />
+    <p style="font-size: 12px; color: #444444 !important;">
+        Sincerely,
+    </p>
+
+    <p style="font-size: 12px; color: #444444 !important;">
+        Sociolee Design team
+    </p>
+</div>

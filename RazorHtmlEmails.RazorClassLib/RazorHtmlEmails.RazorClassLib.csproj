@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <None Remove="View\" />
+    <None Remove="Views\Emails\" />
+    <None Remove="Views\" />
+    <None Remove="Views\Pages\" />
+    <None Remove="Views\Emails\Templates\" />
+    <None Remove="Views\Models\" />
+    <None Remove="Views\Emails\PlainTextTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Emails\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Pages\" />
+    <Folder Include="Views\Emails\Templates\" />
+    <Folder Include="Views\Models\" />
+    <Folder Include="Views\Emails\PlainTextTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\logo.png" />
+    <Content Remove="Views\Emails\PlainTextTemplates\Confirm_email.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SendGrid" Version="9.29.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Emails\PlainTextTemplates\ConfirmAccountEmail.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>ConfirmAccountEmail.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Emails\PlainTextTemplates\Confirm_email.cs">
+      <DependentUpon>Confirm_email.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Emails\PlainTextTemplates\ConfirmEmail.cs">
+      <DependentUpon>ConfirmEmail.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Emails\PlainTextTemplates\ConfirmAccountEmail.cs">
+      <DependentUpon>ConfirmAccountEmail.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

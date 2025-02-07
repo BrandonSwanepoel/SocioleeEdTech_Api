@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "SocioleeDesign-b0507",
+  "private_key_id": "290f094d290b0d86c7faebfd2eb929923010a15e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCmUSxWSc+ghfR/\ne2fkGxWXfJY9KGL5/i3YDuZjjgXjPZmIcNKlftSJGsugGxouEDkVHMiQrE7F4WxW\nDpt54Qg4m3i6059Fy7xLB6kpq4yjGH2JvmelMPq8dXsNn+CQEF9dAyJUOiinqWoK\nUzabn/5fE1Xnj605eQ/ajxHqLEY70MAHno3Bf6tOQVy2KyjkLL4gB36Ej72Z4SdS\nL8+VlU/MsPJ6yQ4RiM6mb0hHvyeIcyccIIPER1ierdZ+E0P4P0tqRLSXLgN4m6EB\nwB7vSRD1E/1ZnekDq9RjcdYs+T8rY3bRaNHnTZzaOrIXcTY8RberA7urw1kC0/dd\nk6XvhWHFAgMBAAECggEABr7QD4fa1eXY7rqwkf3POF+jMEPND9qRPWwNSAhgkMDU\n00XQJUopkI33qDyxKSEbT5HlSIjUgQ4NeMgK4jyQOsuDcABZO1lx/5EF+VytzYeW\nv9lrFrYP1Ujmfrz3PKCNXZZc9BGPyI0EcfrCAjnQ9UYxe7zGB8izLegTj+3Pw2k5\nNmbrw3hT/xopZEjXlqoRP+wFayJ3SU6L17GnisLR3T3iEd1n+udxHh3ydKsUEP54\nDtXsVMoc7ifFBYQaksMWZs/x4rYw3+le3t+ciUWaxr0zx/XNK8K3rLDGntuMtuNW\n/oSOd1mntZMjq17HnN15bBPyYR+L/dDNTZUHCm0oGQKBgQDfSi3YShZzAuHcOcLZ\nw+f97yNv5D+vM9/tZ1OgeNKeyEP8jjLooxtjxrjj1jFhF1hRB0cmhs9ECRRGAZyl\nfsw5edJ76cOMtJXc3Lb/am5UTLw1N2NJcSsoE3d9R/CkcTttMwN35jyFTvs03t5N\n/Ogy9PuRLvwHSYGhVW0hYjJRTwKBgQC+rmcPxTkdYbPTFF3rZK8WrlxRvcuufhli\n7HMVc/w59+3kzgJqvzGCOV+nzayGSlXfAlvaL46lBy6LKVVJQBRg7PIO0Hdo4wL+\nfKJRUvNjcEpwwxyoSFozyRin6Blnck05yfkAP9nmHPvzQG2ivmTPfjsq9lUtYQXB\neux6M+1OqwKBgFq7A6HtiO228BvShLCEAFKYx2eB8ba5d3Y6FCsSrVLDwYxwI5OQ\nI2MJrrs1n97543MZZ/npsXLN1aUUpphAy69XJwYe2Mzl3DdgoCNtFeO/QoLFPNzs\n1UJ1loobn1bSg/k9T116+oCYtU6oeOBrsdZy4X3+/33eioQJ+EwmYJfVAoGBAKXc\n8LswFClxpklSqwuqLf8tthJIZRcoiw6YnNapaFpIRn/DjyipnPgozgMaDhtWJ/Hv\njFRzD8KPR7Y3Qv+PpOpW0Yt/XI85AI67fTn+TMZPlAEYRyI+pW/sWe0cIJTyQSim\nfljwMatPxP1oKrXopaozpGYPljH99lLBiVgXOTI3AoGAd3WxhohPKXfG5GRdjavv\nXxpH7bbe5Rq/CFpxN8rkD+n3mYop1BtfY6jxJsO+KDkzYOfkuI9S/FBp6Twqf70p\nwTI06JJ+jq1U9Y0OlOawqx4ho2URw+eJM1KA7uivUHeBuRYIfH/lAGfXPG4Tw0WC\n0jRw4qa5zL8djswVmDUh89g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-24wyh@SocioleeDesign-b0507.iam.gserviceaccount.com",
+  "client_id": "111123524750514544572",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-24wyh%40SocioleeDesign-b0507.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

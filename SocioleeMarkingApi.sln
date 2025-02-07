@@ -1,0 +1,50 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1703.8
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocioleeMarkingApi", "SocioleeMarkingApi\SocioleeMarkingApi.csproj", "{8C0B8389-F961-4C43-A490-B0AF95760775}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorHtmlEmails.RazorClassLib", "RazorHtmlEmails.RazorClassLib\RazorHtmlEmails.RazorClassLib.csproj", "{A3DC3C83-8A42-4C3E-9C08-58FDD908CE88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorHtmlEmails.Common", "RazorHtmlEmails.Common\RazorHtmlEmails.Common.csproj", "{041B8C4F-C537-4CE6-920A-629E64DCC83B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C0B8389-F961-4C43-A490-B0AF95760775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0B8389-F961-4C43-A490-B0AF95760775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0B8389-F961-4C43-A490-B0AF95760775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0B8389-F961-4C43-A490-B0AF95760775}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DC3C83-8A42-4C3E-9C08-58FDD908CE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DC3C83-8A42-4C3E-9C08-58FDD908CE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DC3C83-8A42-4C3E-9C08-58FDD908CE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DC3C83-8A42-4C3E-9C08-58FDD908CE88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{041B8C4F-C537-4CE6-920A-629E64DCC83B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041B8C4F-C537-4CE6-920A-629E64DCC83B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041B8C4F-C537-4CE6-920A-629E64DCC83B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041B8C4F-C537-4CE6-920A-629E64DCC83B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {441003A0-C8AF-45F2-8E59-3F02D5DDCCD6}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = PrefixedHierarchical
+		$0.TextStylePolicy = $2
+		$2.FileWidth = 80
+		$2.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $3
+		$3.scope = text/x-csharp
+		$0.TextStylePolicy = $4
+		$4.inheritsSet = null
+		$4.scope = text/x-vs
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+﻿@using RazorHtmlEmails.RazorClassLib.Views.Models
+@model AccountPaymentModel
+
+<div style="background-color: white; color: #444444 !important; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 20px rgba(49, 140, 252, 0.02), 0px 0px 20px rgba(49, 140, 252, 0.028), 0px 0px 20px rgba(49, 140, 252, 0.035), 0px 0px 20px rgba(49, 140, 252, 0.042), 0px 0px 20px rgba(49, 140, 252, 0.05), 0px 0px 20px rgba(49, 140, 252, 0.07); border: rgb(49 140 252 / 74%) 1px solid; ">
+
+    <div style="max-width: 600px; margin: auto; border-radius: 8px;">
+        <h1 style="font-size: 18px; color: #318cfcbd;">Payment Instructions for Your Sociolee Design Account Activation</h1>
+        <p>Hi @Model.Username,</p>
+        <p style="font-size: 12px; color: #444444 !important;">Thank you for choosing Sociolee Design for your custom design needs.</p>
+        <p style="font-size: 12px; color: #444444 !important;">To proceed with activating your account and begin creating your designs, please transfer <span style="font-weight: bold; color: #318cfcbd;">@Model.Amount</span> to the following bank details:</p>
+        <div style="margin-top: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background-color: #f9f9f9;">
+            <p style="font-size: 14px; color: #444444 !important;"><strong>Bank Name:</strong> FNB</p>
+            <p style="font-size: 14px; color: #444444 !important; "><strong>Account Name:</strong> Sociolee (pty) Ltd</p>
+            <p style="font-size: 14px; color: #444444 !important; "><strong>Account Number:</strong> 63054878823</p>
+            <p style="font-size: 14px; color: #444444 !important; "><strong>Branch Code:</strong> 250655</p>
+            <p style="font-size: 14px; color: #444444 !important; "><strong>Reference:</strong> @Model.Reference</p>
+        </div>
+        <p style="font-size: 12px; color: #444444 !important;">Once the payment is received and confirmed, we will activate your account. You will then be able to start creating and requesting your designs.</p>
+        <p style="font-size: 12px; color: #444444 !important;">If you have any questions or need assistance, please feel free to reach out.</p>
+    </div>
+
+    <br />
+    <p style="font-size: 12px; color: #444444 !important;">
+        Sincerely,
+    </p>
+
+    <p style="font-size: 12px; color: #444444 !important;">
+        Sociolee Design team
+    </p>
+</div>

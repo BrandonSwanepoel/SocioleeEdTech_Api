@@ -1,0 +1,88 @@
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.deps.json
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.AssemblyReference.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfoInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.CoreCompileInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.RazorHtmlEmails.RazorClassLib.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.build.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.build.json
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.development.json
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/scopedcss/bundle/RazorHtmlEmails.RazorClassLib.styles.css
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/refint/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/ref/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.deps.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.AssemblyReference.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfoInputs.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfo.cs
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.CoreCompileInputs.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cs
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.RazorHtmlEmails.RazorClassLib.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.build.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.build.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.development.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/scopedcss/bundle/RazorHtmlEmails.RazorClassLib.styles.css
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/refint/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/ref/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.deps.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.AssemblyReference.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfoInputs.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfo.cs
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.CoreCompileInputs.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cache
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cs
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.RazorHtmlEmails.RazorClassLib.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.build.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.build.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.development.json
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/scopedcss/bundle/RazorHtmlEmails.RazorClassLib.styles.css
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/refint/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/ref/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.deps.json
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.AssemblyReference.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfoInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.AssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.csproj.CoreCompileInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.RazorAssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.RazorHtmlEmails.RazorClassLib.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.build.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.RazorHtmlEmails.RazorClassLib.props
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.build.json
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/staticwebassets.development.json
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/scopedcss/bundle/RazorHtmlEmails.RazorClassLib.styles.css
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/refint/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/Debug/net6.0/ref/RazorHtmlEmails.RazorClassLib.dll

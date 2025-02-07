@@ -1,0 +1,311 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/SocioleeMarkingApi.csproj": {}
+  },
+  "projects": {
+    "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj",
+        "projectName": "RazorHtmlEmails.Common",
+        "projectPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj",
+        "packagesPath": "/Users/brandonswanepoel/.nuget/packages/",
+        "outputPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.Common/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/brandonswanepoel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj": {
+                "projectPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj",
+        "projectName": "RazorHtmlEmails.RazorClassLib",
+        "projectPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj",
+        "packagesPath": "/Users/brandonswanepoel/.nuget/packages/",
+        "outputPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/brandonswanepoel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/SocioleeMarkingApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/SocioleeMarkingApi.csproj",
+        "projectName": "SocioleeMarkingApi",
+        "projectPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/SocioleeMarkingApi.csproj",
+        "packagesPath": "/Users/brandonswanepoel/.nuget/packages/",
+        "outputPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/brandonswanepoel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/7.0.317/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj": {
+                "projectPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.Common/RazorHtmlEmails.Common.csproj"
+              },
+              "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj": {
+                "projectPath": "/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/RazorHtmlEmails.RazorClassLib/RazorHtmlEmails.RazorClassLib.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.20.0, )"
+            },
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.61.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.14, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.Extensions.Logging.AzureAppServices": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "NgrokApi": {
+              "target": "Package",
+              "version": "[0.9.0, )"
+            },
+            "PayFast": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "PayFast.AspNet": {
+              "target": "Package",
+              "version": "[1.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
+            "System.Security.Permissions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "axios": {
+              "target": "Package",
+              "version": "[0.16.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[6.0.31, 6.0.31]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.31, 6.0.31]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.317/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

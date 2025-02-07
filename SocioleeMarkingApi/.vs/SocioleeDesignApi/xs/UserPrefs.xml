@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{924B515E-00CA-431E-9F29-827A00D336F1}|Default">
+  <MonoDevelop.Ide.ItemProperties.SocioleeDesignApi PreferredExecutionTarget="/Applications/Firefox Developer Edition.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SocioleeDesignApi" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+</Properties>

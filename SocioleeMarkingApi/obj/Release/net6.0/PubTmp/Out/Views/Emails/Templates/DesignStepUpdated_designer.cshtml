@@ -1,0 +1,40 @@
+﻿@using RazorHtmlEmails.RazorClassLib.Views.Models
+@model StepUpdatedModelDesigner
+
+<div style="background-color: white; color: #444444 !important; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 20px rgba(49, 140, 252, 0.02), 0px 0px 20px rgba(49, 140, 252, 0.028), 0px 0px 20px rgba(49, 140, 252, 0.035), 0px 0px 20px rgba(49, 140, 252, 0.042), 0px 0px 20px rgba(49, 140, 252, 0.05), 0px 0px 20px rgba(49, 140, 252, 0.07); border: rgb(49 140 252 / 74%) 1px solid; ">
+    <p style="font-size: 20px; font-weight: bold; color: rgb(49 140 252 / 74%) !important;">
+        Design Alert
+    </p>
+    <h3 style="font-size: 14px; color: #444444;">
+        Hi @Model.Username,
+    </h3>
+
+    <p style="font-size: 12px; color: #444444 !important;">
+        @Model.EmailText
+    </p>
+
+    <br />
+    <p style="font-size: 12px; font-weight:bold; color: #444444 !important;">
+        Click the button to go to design.
+    </p>
+    <div style="display: flex; justify-content: center; align-items: center;text-align: center">
+        <a href="@Model.DesignUrl" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: rgb(49 140 252 / 74%) !important; text-decoration: none; border-radius: 5px;">
+            View
+        </a>
+    </div>
+    <br />
+
+
+    <p style="font-size: 12px; color: #444444 !important;">
+        If you have any questions, just reply to this email — we're always happy to help.
+    </p>
+
+    <br />
+    <p style="font-size: 12px; color: #444444 !important;">
+        Sincerely,
+    </p>
+
+    <p style="font-size: 12px; color: #444444 !important;">
+        Sociolee Design team
+    </p>
+</div>

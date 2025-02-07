@@ -1,0 +1,98 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>d4f83d2e-c9e9-4f5a-92bd-36c64a661f0e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.14" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.6" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.20.0" />
+    <PackageReference Include="PayFast.AspNet" Version="1.0.5" />
+    <PackageReference Include="PayFast" Version="2.0.0" />
+    <PackageReference Include="axios" Version="0.16.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="8.0.6" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.61.0" />
+    <PackageReference Include="NgrokApi" Version="0.9.0" />
+    <PackageReference Include="FirebaseAdmin" Version="2.4.1" />
+    <PackageReference Include="System.Security.Permissions" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="Models\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Services\" />
+    <None Remove="Helper\" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Swashbuckle.AspNetCore.Filters" />
+    <None Remove="Data\" />
+    <None Remove="MailKit" />
+    <None Remove="Models\AuthModels\" />
+    <None Remove="Middleware\" />
+    <None Remove="Common\" />
+    <None Remove="Middleware\ErrorHandling\" />
+    <None Remove="EmailTemplates\" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor" />
+    <None Remove="RazorEngineCore" />
+    <None Remove="Models\UserModels\" />
+    <None Remove="Models\Database models\" />
+    <None Remove="Models\DatabaseModels\LikedReview.cs" />
+    <None Remove="Models\CommonModels\" />
+    <None Remove="Models\BlobModel\" />
+    <None Remove="Models\PaymentModels\" />
+    <None Remove="Enums\" />
+    <None Remove="Enums\Payments\" />
+    <None Remove="Enums\EmailTracking\" />
+    <None Remove="Models\Database\" />
+    <None Remove="Models\DTOs\" />
+    <None Remove="Models\Comment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\AuthModels\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Common\" />
+    <Folder Include="Middleware\ErrorHandling\" />
+    <Folder Include="EmailTemplates\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="Models\UserModels\" />
+    <Folder Include="Models\CommonModels\" />
+    <Folder Include="Models\BlobModel\" />
+    <Folder Include="Models\PaymentModels\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Enums\Payments\" />
+    <Folder Include="Enums\EmailTracking\" />
+    <Folder Include="Models\Database\" />
+    <Folder Include="Models\DTOs\" />
+    <Folder Include="Models\Comment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RazorHtmlEmails.RazorClassLib\RazorHtmlEmails.RazorClassLib.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\RazorHtmlEmails.Common\RazorHtmlEmails.Common.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/SocioleeDesign_api.props" />
+</Project>

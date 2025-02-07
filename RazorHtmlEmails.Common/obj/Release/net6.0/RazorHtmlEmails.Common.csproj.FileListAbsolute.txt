@@ -1,0 +1,15 @@
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/bin/Release/net6.0/RazorHtmlEmails.Common.deps.json
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/bin/Release/net6.0/RazorHtmlEmails.Common.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/bin/Release/net6.0/RazorHtmlEmails.Common.pdb
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/bin/Release/net6.0/RazorHtmlEmails.RazorClassLib.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/bin/Release/net6.0/RazorHtmlEmails.RazorClassLib.pdb
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.csproj.AssemblyReference.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.AssemblyInfoInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.AssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.csproj.CoreCompileInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.csproj.CopyComplete
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/refint/RazorHtmlEmails.Common.dll
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/RazorHtmlEmails.Common.pdb
+/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.Common/obj/Release/net6.0/ref/RazorHtmlEmails.Common.dll

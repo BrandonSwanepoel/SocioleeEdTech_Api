@@ -1,0 +1,85 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RazorHtmlEmails.RazorClassLib
+build_property.RootNamespace = RazorHtmlEmails.RazorClassLib
+build_property.ProjectDir = /Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/PlainTextTemplates/ConfirmAccountEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1BsYWluVGV4dFRlbXBsYXRlcy9Db25maXJtQWNjb3VudEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/AccountPaymentDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9BY2NvdW50UGF5bWVudERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/ConfirmAccountEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9Db25maXJtQWNjb3VudEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/ConfirmChangeAccountEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9Db25maXJtQ2hhbmdlQWNjb3VudEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/DesignStepUpdated.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9EZXNpZ25TdGVwVXBkYXRlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/DesignStepUpdated_designer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9EZXNpZ25TdGVwVXBkYXRlZF9kZXNpZ25lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/ForgotPasswordEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9Gb3Jnb3RQYXNzd29yZEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/Templates/SubscriptionExpiryEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL1RlbXBsYXRlcy9TdWJzY3JpcHRpb25FeHBpcnlFbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Emails/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWxzL19WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Pages/ChangedPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnZXMvQ2hhbmdlZFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Pages/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnZXMvQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Pages/ConfirmedAccount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnZXMvQ29uZmlybWVkQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Pages/Unsubscribed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnZXMvVW5zdWJzY3JpYmVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Shared/Button.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0J1dHRvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Shared/EmailLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0VtYWlsTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/brandonswanepoel/Documents/SocioleeDesignProject/SocioleeDesignApi/RazorHtmlEmails.RazorClassLib/Views/Shared/PageLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhZ2VMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

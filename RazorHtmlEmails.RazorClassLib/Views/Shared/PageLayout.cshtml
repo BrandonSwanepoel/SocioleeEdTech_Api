@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sociolee</title>
+    <base href="~/" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+    <link rel="icon" type="image/x-icon" href="https://socioleeblobstorage.blob.core.windows.net/images/favicon.ico" />
+
+
+    <style type="text/css">
+        /* FONTS */
+
+        /* CLIENT-SPECIFIC STYLES */
+        body, table, td, a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse !important;
+        }
+
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        /* MOBILE STYLES */
+        @@media screen and (max-width:600px) {
+            h1 {
+                font-size: 32px !important;
+                line-height: 32px !important;
+            }
+
+            p {
+                font-size: 16px !important;
+                line-height: 20px !important;
+            }
+        }
+
+        .img-container {
+            background-image: url('cid:header');
+            border: none;
+            background-repeat: no-repeat;
+            outline: none;
+            display: block;
+            width: 320px;
+            height: 40px;
+        }
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+    </style>
+</head>
+<body bgcolor="#fff" style=" min-height: 100vh; background-color: #8d75f6; font-family: 'Helvetica', sans-serif; margin: 0 !important; padding: 0 !important; ">
+
+    <table style="" border="0" cellpadding="0" cellspacing="0" id="main-card" width="100%">
+        <tr>
+            <td bgcolor="#fff" align="center" style="border-bottom: 1px solid #aaa;">
+                <table border="0" cellpadding="0" cellspacing="0" style="align: center;">
+                    <tr>
+                        <td align="center" valign="top">
+                            <![endif]–>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" valign="top" style="padding: 15px 10px 10px 10px;">
+                                        <img src="images/logo.png" width="270" height="150" border="0" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        @if (ViewData["EmailTitle"] != null)
+        {
+            <tr>
+                <td align="center" style="padding: 20px 10px 0px 10px;">
+                    <table align="center" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td align="center" valign="top" width="600">
+                                <![endif]–>
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                                    <tr>
+                                        <td align="center" valign="top" style="padding: 40px 20px 0px 20px; border-radius: 4px 4px 0px 0px; color: #111111;  font-size: 26px; line-height: 36px;">
+
+                                            <h3 align="center" style="color: #ffff"> @ViewData["EmailTitle"]</h3>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        }
+        <tr>
+            <td align="center" style="padding: 0px 10px 20px 10px;">
+                <table align="center" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td align="center" valign="top">
+                            <![endif]–>
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                                <tr>
+                                    <td align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-size: 18px; font-weight: 400; line-height: 25px;">
+                                        @RenderBody()
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    margin-bottom: 60px;
+    background-color: #f4f4f4;
+    font-family: 'Arial', Helvetica,sans-serif;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.img-container {
+    background: #fff;
+    align: center;
+    border: 0;
+    cellspacing: 0;
+    cellpadding: 0;
+    width: 600;
+    border-bottom: 1px solid #aaa;
+}
+
+body, table, td, a {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+table, td {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+}
+
+.btn {
+    border: none;
+    font: Arial, Helvetica, Sans-serif padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #7399cf;
+    color: #fff;
+}
+
+img {
+    -ms-interpolation-mode: bicubic;
+}
+/* RESET STYLES */
+img {
+    border: 0;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse !important;
+}
+
+
+/* iOS BLUE LINKS */
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+/* MOBILE STYLES */
+@media screen and (max-width:600px) {
+    h1 {
+        font-size: 32px !important;
+        line-height: 32px !important;
+    }
+}
+/* ANDROID CENTER FIX */
+div[style*="margin: 16px 0;"] {
+    margin: 0 !important;
+}

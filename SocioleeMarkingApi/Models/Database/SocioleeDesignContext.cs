@@ -39,6 +39,8 @@ public partial class SocioleeDesignContext : DbContext
 
     public virtual DbSet<InstitutionLecturer> InstitutionLecturers { get; set; }
 
+    public virtual DbSet<LecturerCourse> LecturerCourses { get; set; }
+
     public virtual DbSet<Message> Messages { get; set; }
 
     public virtual DbSet<MessageAsset> MessageAssets { get; set; }
@@ -276,6 +278,23 @@ public partial class SocioleeDesignContext : DbContext
                 .HasConstraintName("FK__Instituti__UserI__178D7CA5");
         });
 
+        modelBuilder.Entity<LecturerCourse>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Lecturer__3214EC072552B1D9");
+
+            entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+
+            entity.HasOne(d => d.InstitutionCourses).WithMany(p => p.LecturerCourses)
+                .HasForeignKey(d => d.InstitutionCoursesId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_LecturerCourses_InstitutionCoursesId");
+
+            entity.HasOne(d => d.Lecturer).WithMany(p => p.LecturerCourses)
+                .HasForeignKey(d => d.LecturerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_LecturerCourses_LecturerId");
+        });
+
         modelBuilder.Entity<Message>(entity =>
         {
             entity.HasKey(e => e.Id).IsClustered(false);
@@ -284,10 +303,6 @@ public partial class SocioleeDesignContext : DbContext
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.Created).HasColumnType("datetime");
-
-            entity.HasOne(d => d.Asset).WithMany(p => p.Messages)
-                .HasForeignKey(d => d.AssetId)
-                .HasConstraintName("FK_Messages_AssetId");
 
             entity.HasOne(d => d.Request).WithMany(p => p.Messages)
                 .HasForeignKey(d => d.RequestId)
@@ -310,11 +325,6 @@ public partial class SocioleeDesignContext : DbContext
             entity.Property(e => e.ContentPath).HasMaxLength(150);
             entity.Property(e => e.Reviewed).HasColumnName("reviewed");
             entity.Property(e => e.Type).HasMaxLength(100);
-
-            entity.HasOne(d => d.Message).WithMany(p => p.MessageAssets)
-                .HasForeignKey(d => d.MessageId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_MessageAssets_Id");
 
             entity.HasOne(d => d.Note).WithMany(p => p.MessageAssets)
                 .HasForeignKey(d => d.NoteId)
@@ -491,6 +501,11 @@ public partial class SocioleeDesignContext : DbContext
                 .HasForeignKey(d => d.InstitutionCourseId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_institution_courseId");
+
+            entity.HasOne(d => d.Institution).WithMany(p => p.StudentProjects)
+                .HasForeignKey(d => d.InstitutionId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_StudentProjects_institutionId");
         });
 
         modelBuilder.Entity<StudentProjectAssignment>(entity =>

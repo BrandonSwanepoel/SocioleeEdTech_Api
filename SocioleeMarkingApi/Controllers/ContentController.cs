@@ -130,16 +130,16 @@ namespace SocioleeMarkingApi.Controllers
 			return Ok(downloaded);
 		}
 
-		[HttpGet("userContent")]
-		[ProducesResponseType(typeof(Task<List<UserContent>>), 200)]
-		public async Task<IActionResult> GetUserContent()
-		{
-			var userId = _userService.GetUserId();
-			if (userId == Guid.Empty)
-				throw new HttpRequestException("Token invalid please sign in again.");
-			var contents = await _ContentService.GetUserContent(userId);
-			return Ok(contents);
-		}
+		//[HttpGet("userContent")]
+		//[ProducesResponseType(typeof(Task<List<UserContent>>), 200)]
+		//public async Task<IActionResult> GetUserContent()
+		//{
+		//	var userId = _userService.GetUserId();
+		//	if (userId == Guid.Empty)
+		//		throw new HttpRequestException("Token invalid please sign in again.");
+		//	var contents = await _ContentService.GetUserContent(userId);
+		//	return Ok(contents);
+		//}
 
 		//[HttpGet("designByFromId")]
 		//[ProducesResponseType(typeof(Task<IEnumerable<Design>>), 200)]

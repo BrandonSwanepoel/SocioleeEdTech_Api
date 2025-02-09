@@ -19,10 +19,6 @@ public partial class Message
 
     public bool? Deleted { get; set; }
 
-    public virtual MessageAsset? Asset { get; set; }
-
-    public virtual ICollection<MessageAsset> MessageAssets { get; } = new List<MessageAsset>();
-
     public virtual ContentForm Request { get; set; } = null!;
 
     public virtual User User { get; set; } = null!;

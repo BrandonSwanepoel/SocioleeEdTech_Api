@@ -6,9 +6,9 @@ namespace SocioleeMarkingApi.Services
 {
 	public interface IMessagingService
 	{
-		Task<IEnumerable<MessageOut>> GetMessages(Guid requestId);
-		Task<MessageOut> SendMessage(MessageIn message);
-		Task<bool> DeleteMessage(Guid messageId);
+		//Task<IEnumerable<MessageOut>> GetMessages(Guid requestId);
+		//Task<MessageOut> SendMessage(MessageIn message);
+		//Task<bool> DeleteMessage(Guid messageId);
 	}
 	public class MessagingService : IMessagingService
 	{
@@ -22,16 +22,16 @@ namespace SocioleeMarkingApi.Services
 		}
 
 
-		public async Task<IEnumerable<MessageOut>> GetMessages(Guid requestId)
-		{
-			var messages = await _db.Messages
-				.Include(x => x.MessageAssets)
-				.Where(x => x.RequestId == requestId)
-				.OrderBy(x => x.Created)
-				.Select(x => new MessageOut(x))
-				.ToListAsync();
-			return messages;
-		}
+		//public async Task<IEnumerable<MessageOut>> GetMessages(Guid requestId)
+		//{
+		//	var messages = await _db.Messages
+		//		.Include(x => x.MessageAssets)
+		//		.Where(x => x.RequestId == requestId)
+		//		.OrderBy(x => x.Created)
+		//		.Select(x => new MessageOut(x))
+		//		.ToListAsync();
+		//	return messages;
+		//}
 
 		public async Task<MessageOut> SendMessage(MessageIn message)
 		{
@@ -50,18 +50,18 @@ namespace SocioleeMarkingApi.Services
 			return new MessageOut(newMessage);
 		}
 
-		public async Task<bool> DeleteMessage(Guid messageId)
-		{
-			var message = await _db.Messages
-						.Include(x => x.MessageAssets)
-						.Where(x => x.Id == messageId).FirstOrDefaultAsync() ?? throw new Exception("Error deleting message.");
+		//public async Task<bool> DeleteMessage(Guid messageId)
+		//{
+		//	//var message = await _db.Messages
+		//	//			//.Include(x => x.MessageAssets)
+		//	//			.Where(x => x.Id == messageId).FirstOrDefaultAsync() ?? throw new Exception("Error deleting message.");
 
-			message.Deleted = true;
-			message.TextMessage = "Message is deleted";
-			_db.MessageAssets.RemoveRange(message.MessageAssets);
-			await _db.SaveChangesAsync();
-			return true;
-		}
+		//	//message.Deleted = true;
+		//	//message.TextMessage = "Message is deleted";
+		//	//_db.MessageAssets.RemoveRange(message.MessageAssets);
+		//	//await _db.SaveChangesAsync();
+		//	//return true;
+		//}
 	}
 }
 

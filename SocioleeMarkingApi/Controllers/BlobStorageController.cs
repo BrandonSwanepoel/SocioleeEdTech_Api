@@ -74,38 +74,38 @@ namespace SocioleeMarkingApi.Controllers
 			return Ok(new { path = toReturn });
 		}
 
-		[HttpPost("UploadMessageAsset")]
-		public async Task<IActionResult> UploadMessageAsset([FromQuery]Guid requestId, [FromQuery] Guid messageId, [FromQuery]string container, [FromQuery] bool reviewDesign)
-		{
-			//var result = await _BlobStorageService.UploadBlobFile(model.FilePath, model.FileName);
-			//return Ok(result);
+		//[HttpPost("UploadMessageAsset")]
+		//public async Task<IActionResult> UploadMessageAsset([FromQuery]Guid requestId, [FromQuery] Guid messageId, [FromQuery]string container, [FromQuery] bool reviewDesign)
+		//{
+		//	//var result = await _BlobStorageService.UploadBlobFile(model.FilePath, model.FileName);
+		//	//return Ok(result);
 
-			IFormFile file = Request.Form.Files[0];
+		//	IFormFile file = Request.Form.Files[0];
 
-			if (file == null)
-			{
-				return BadRequest();
-			}
+		//	if (file == null)
+		//	{
+		//		return BadRequest();
+		//	}
 
-			var index = await _ContentService.GetDesignIndex(requestId);
-			var name = $"{requestId}_design_v{index}";
+		//	var index = await _ContentService.GetDesignIndex(requestId);
+		//	var name = $"{requestId}_design_v{index}";
 
-			var result = await _BlobStorageService.UploadFileBlobAsync(
-					container,
-					file.OpenReadStream(),
-					file.ContentType,
-					name);
+		//	var result = await _BlobStorageService.UploadFileBlobAsync(
+		//			container,
+		//			file.OpenReadStream(),
+		//			file.ContentType,
+		//			name);
 
-			var uploadMessageAsset = new UploadMessageAsset {
-				MessageId = messageId,
-				ContentPath = name,
-				ReviewDesign = reviewDesign
-			};
+		//	var uploadMessageAsset = new UploadMessageAsset {
+		//		MessageId = messageId,
+		//		ContentPath = name,
+		//		ReviewDesign = reviewDesign
+		//	};
 
-			var messageAsset = await _ContentService.UploadMessageAsset(uploadMessageAsset);
+		//	var messageAsset = await _ContentService.UploadMessageAsset(uploadMessageAsset);
 
-			return Ok(messageAsset);
-		}
+		//	return Ok(messageAsset);
+		//}
 
 		//[HttpPost("UploadSong/{container}")]
 		//public async Task<IActionResult> UploadSong(string container)

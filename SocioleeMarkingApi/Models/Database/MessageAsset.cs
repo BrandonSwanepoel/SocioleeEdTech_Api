@@ -23,9 +23,5 @@ public partial class MessageAsset
 
     public virtual ICollection<DesignChangeRequest> DesignChangeRequests { get; } = new List<DesignChangeRequest>();
 
-    public virtual Message Message { get; set; } = null!;
-
-    public virtual ICollection<Message> Messages { get; } = new List<Message>();
-
     public virtual DesignChangeRequest? Note { get; set; }
 }

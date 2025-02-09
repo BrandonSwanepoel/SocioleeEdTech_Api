@@ -149,6 +149,25 @@ namespace SocioleeMarkingApi.Models
 		public string Email { get; set; } = null!;
 	}
 
+	public class LecturerDTO
+	{
+		public LecturerDTO(User user, RoleType role, InstitutionLecturer lecturer, IEnumerable<Course> courses)
+		{
+			Id = lecturer.Id;
+			Name = user.FullName;
+			Year = lecturer.Years;
+			Course = courses;
+			Email = user.Email;
+			Role = role;
+		}
+		public Guid Id { get; set; }
+		public string Name { get; set; } = null!;
+		public int? Year { get; set; }
+		public IEnumerable<Course> Course { get; set; } = null!;
+		public string Email { get; set; } = null!;
+		public RoleType Role { get; set; } = null!;
+	}
+
 	public class UpsertStudentDTO
 	{
 		public Guid? Id { get; set; }
@@ -157,6 +176,18 @@ namespace SocioleeMarkingApi.Models
 		public int Year { get; set; }
 		public List<Guid> Course { get; set; } = new List<Guid>();
 		public string Email { get; set; } = null!;
+	}
+
+	public class UserAnalytics
+	{
+		public double GradeAve { get; set; }
+		public List<UserCourseAnalytics> UserCourseAnalytics { get; set; } = new List<UserCourseAnalytics>();
+	}
+
+	public class UserCourseAnalytics
+	{
+		public string CourseName { get; set; } = null!;
+		public double AverageGrade { get; set; }
 	}
 
 	public class Course
@@ -222,6 +253,7 @@ namespace SocioleeMarkingApi.Models
 	public class UpsertStudentProjectDTO
 	{
 		public Guid? Id { get; set; }
+		public Guid InstitutionId { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
 		public Guid Course { get; set; }
@@ -341,13 +373,13 @@ namespace SocioleeMarkingApi.Models
 	{
 		public UserContent(Message? message)
 		{
-			if (message != null && message.AssetId != null && message.Asset != null)
-			{
-				Id = (Guid)message.AssetId;
-				UserId = message.UserId;
-				ContentPath = message.Asset.ContentPath;
-				Created = message.Created;
-			}
+			//if (message != null && message.AssetId != null && message.Asset != null)
+			//{
+			//	Id = (Guid)message.AssetId;
+			//	UserId = message.UserId;
+			//	ContentPath = message.Asset.ContentPath;
+			//	Created = message.Created;
+			//}
 		}
 
 		public Guid Id { get; set; }

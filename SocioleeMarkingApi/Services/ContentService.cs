@@ -31,9 +31,9 @@ namespace SocioleeMarkingApi.Services
 		Task<IEnumerable<DesignChange>> GetContentNote(Guid formId);
 		Task<DesignReview> GetContentDesignReview(Guid messageId);
 		Task<bool> ContentDownloaded(Guid formId);
-		Task<List<UserContent>> GetUserContent(Guid userId);
+		//Task<List<UserContent>> GetUserContent(Guid userId);
 		Task<int> GetDesignIndex(Guid requestId);
-		Task<MessageAsset?> UploadMessageAsset(UploadMessageAsset uploadContentDesign);
+		//Task<MessageAsset?> UploadMessageAsset(UploadMessageAsset uploadContentDesign);
 
 		//Projects
 		Task<bool> UpsertProject(UpsertStudentProjectDTO project, bool editProject);
@@ -249,75 +249,75 @@ namespace SocioleeMarkingApi.Services
 			return null;
 		}
 
-		public async Task<MessageAsset?> UploadMessageAsset(UploadMessageAsset messageAsset)
-		{
-			var existingMessage = await _db.Messages
-				.Include(x => x.User)
-				.Where(x => x.Id == messageAsset.MessageId)
-				.FirstOrDefaultAsync();
+		//public async Task<MessageAsset?> UploadMessageAsset(UploadMessageAsset messageAsset)
+		//{
+			//var existingMessage = await _db.Messages
+			//	.Include(x => x.User)
+			//	.Where(x => x.Id == messageAsset.MessageId)
+			//	.FirstOrDefaultAsync();
 
-			if (existingMessage != null)
-			{
-				var contentAssetId = await _uniqueIds.UniqueContentAssetId();
-				var newMessageAsset = new MessageAsset
-				{
-					Id = contentAssetId,
-					MessageId = messageAsset.MessageId,
-					ContentPath = messageAsset.ContentPath,
-					Type = "image",
-					Downloaded = false,
-					ReviewDesign = messageAsset.ReviewDesign
-				};
+			//if (existingMessage != null)
+			//{
+			//	var contentAssetId = await _uniqueIds.UniqueContentAssetId();
+			//	var newMessageAsset = new MessageAsset
+			//	{
+			//		Id = contentAssetId,
+			//		MessageId = messageAsset.MessageId,
+			//		ContentPath = messageAsset.ContentPath,
+			//		Type = "image",
+			//		Downloaded = false,
+			//		ReviewDesign = messageAsset.ReviewDesign
+			//	};
 
-				if (messageAsset.ReviewDesign)
-				{
-					//So that there is always only one design to review.
-					var reviewDesigns = await _db.Messages
-									.Include(x => x.Asset)
-									.Where(x =>
-												x.Asset != null &&
-												x.Asset.ReviewDesign == true &&
-												x.RequestId == existingMessage.RequestId
-									)
-									.Select(x => x.Asset)
-									.ToListAsync();
+			//	if (messageAsset.ReviewDesign)
+			//	{
+			//		//So that there is always only one design to review.
+			//		var reviewDesigns = await _db.Messages
+			//						.Include(x => x.Asset)
+			//						.Where(x =>
+			//									x.Asset != null &&
+			//									x.Asset.ReviewDesign == true &&
+			//									x.RequestId == existingMessage.RequestId
+			//						)
+			//						.Select(x => x.Asset)
+			//						.ToListAsync();
 
-					if (reviewDesigns != null)
-					{
-						foreach (var reviewDesign in reviewDesigns)
-						{
-							if (reviewDesign?.Reviewed != true)
-							{
-								reviewDesign.Reviewed = true;
-							}
+			//		if (reviewDesigns != null)
+			//		{
+			//			foreach (var reviewDesign in reviewDesigns)
+			//			{
+			//				if (reviewDesign?.Reviewed != true)
+			//				{
+			//					reviewDesign.Reviewed = true;
+			//				}
 
-						}
-					}
-				}
+			//			}
+			//		}
+			//	}
 
-				await _db.MessageAssets.AddAsync(newMessageAsset);
+			//	await _db.MessageAssets.AddAsync(newMessageAsset);
 
-				existingMessage.AssetId = newMessageAsset.Id;
-				await _db.SaveChangesAsync();
+			//	existingMessage.AssetId = newMessageAsset.Id;
+			//	await _db.SaveChangesAsync();
 
-				if (messageAsset.ReviewDesign)
-				{
-					await UpdateDesignStep(existingMessage.RequestId, 2);
+			//	if (messageAsset.ReviewDesign)
+			//	{
+			//		await UpdateDesignStep(existingMessage.RequestId, 2);
 
-					var stepText = UpdatedStepText(1);
-					if (stepText != null)
-					{
-						var assetUrl = "https://SocioleeMarking.com/content-list/content/" + existingMessage.RequestId;
+			//		var stepText = UpdatedStepText(1);
+			//		if (stepText != null)
+			//		{
+			//			var assetUrl = "https://SocioleeMarking.com/content-list/content/" + existingMessage.RequestId;
 
-						await _registerAccountService.StepUpdated(existingMessage.User.FullName, existingMessage.User.Email, stepText, assetUrl);
-					}
-				}
+			//			await _registerAccountService.StepUpdated(existingMessage.User.FullName, existingMessage.User.Email, stepText, assetUrl);
+			//		}
+			//	}
 
-				return newMessageAsset;
+			//	return newMessageAsset;
 
-			}
-			return null;
-		}
+			//}
+			//return null;
+		//}
 
 		public async Task<bool> UploadContent(UploadContentDesign uploadContentDesign)
 		{
@@ -396,48 +396,48 @@ namespace SocioleeMarkingApi.Services
 
 		public async Task<bool> AddContentNotes(DesignChangeRequestsDTO designChangeRequestsDTO)
 		{
-			if (designChangeRequestsDTO.HasChanges)
-			{
-				var existingMessage = await _db.Messages
-					.Include(x => x.Asset)
-					.Include(x => x.Request)
-						.ThenInclude(x => x.User)
-					.Where(x => x.AssetId == designChangeRequestsDTO.MessageAssetId)
-					.FirstOrDefaultAsync();
+			//if (designChangeRequestsDTO.HasChanges)
+			//{
+			//	var existingMessage = await _db.Messages
+			//		.Include(x => x.Asset)
+			//		.Include(x => x.Request)
+			//			.ThenInclude(x => x.User)
+			//		.Where(x => x.AssetId == designChangeRequestsDTO.MessageAssetId)
+			//		.FirstOrDefaultAsync();
 
-				if (existingMessage?.Asset == null) {
-					throw new Exception("Error: Saving change requests, try again.");
-				}
+			//	if (existingMessage?.Asset == null) {
+			//		throw new Exception("Error: Saving change requests, try again.");
+			//	}
 
-				foreach (var change in designChangeRequestsDTO.DesignChanges)
-				{
-					var contentNoteId = await _uniqueIds.UniqueDesignChangeRequestId();
-					var designChangeRequest = new DesignChangeRequest
-					{
-						Id = contentNoteId,
-						UserId = existingMessage.Request.UserId,
-						ContentFormId = designChangeRequestsDTO.RequestId,
-						ContentAssetId = designChangeRequestsDTO.MessageAssetId,
-						X = change.X,
-						Y = change.Y,
-						Number = change.Number,
-						Text = change.Text,
-						Created = CommonFunctions.CurrentDateTime(),
-					};
-					await _db.DesignChangeRequests.AddAsync(designChangeRequest);
-					await _db.SaveChangesAsync();
-				}
+			//	foreach (var change in designChangeRequestsDTO.DesignChanges)
+			//	{
+			//		var contentNoteId = await _uniqueIds.UniqueDesignChangeRequestId();
+			//		var designChangeRequest = new DesignChangeRequest
+			//		{
+			//			Id = contentNoteId,
+			//			UserId = existingMessage.Request.UserId,
+			//			ContentFormId = designChangeRequestsDTO.RequestId,
+			//			ContentAssetId = designChangeRequestsDTO.MessageAssetId,
+			//			X = change.X,
+			//			Y = change.Y,
+			//			Number = change.Number,
+			//			Text = change.Text,
+			//			Created = CommonFunctions.CurrentDateTime(),
+			//		};
+			//		await _db.DesignChangeRequests.AddAsync(designChangeRequest);
+			//		await _db.SaveChangesAsync();
+			//	}
 
-				existingMessage.Asset.Reviewed = true;
-				await _db.SaveChangesAsync();
+			//	existingMessage.Asset.Reviewed = true;
+			//	await _db.SaveChangesAsync();
 
-				var notificationText = $"{existingMessage.Request.User.FullName} has reviewed your design. Please make the requested updates.";
+			//	var notificationText = $"{existingMessage.Request.User.FullName} has reviewed your design. Please make the requested updates.";
 
-				await SendEmailToDesigners(notificationText, existingMessage.RequestId);
-			}
+			//	await SendEmailToDesigners(notificationText, existingMessage.RequestId);
+			//}
 
-			//await AddContentStep(designChangeRequestsDTO.RequestId, designChangeRequestsDTO.StepIndex);
-			await UpdateDesignStep(designChangeRequestsDTO.RequestId, 1);
+			////await AddContentStep(designChangeRequestsDTO.RequestId, designChangeRequestsDTO.StepIndex);
+			//await UpdateDesignStep(designChangeRequestsDTO.RequestId, 1);
 
 
 			return true;
@@ -474,32 +474,32 @@ namespace SocioleeMarkingApi.Services
 
 		public async Task<bool> NoContentNotes(DesignChangeRequestsDTO contentNotesDTO)
 		{
-			var contentStep = await _db.ContentSteps.Where(x => x.ContentFormId == contentNotesDTO.RequestId).FirstOrDefaultAsync();
+			//var contentStep = await _db.ContentSteps.Where(x => x.ContentFormId == contentNotesDTO.RequestId).FirstOrDefaultAsync();
 
-			if (contentStep != null)
-			{
-				var existingMessage = await _db.Messages
-					.Include(x => x.Asset)
-					.Include(x => x.Request)
-						.ThenInclude(x => x.User)
-					.Where(x => x.AssetId == contentNotesDTO.MessageAssetId)
-					.FirstOrDefaultAsync();
+			//if (contentStep != null)
+			//{
+			//	var existingMessage = await _db.Messages
+			//		.Include(x => x.Asset)
+			//		.Include(x => x.Request)
+			//			.ThenInclude(x => x.User)
+			//		.Where(x => x.AssetId == contentNotesDTO.MessageAssetId)
+			//		.FirstOrDefaultAsync();
 
-				if (existingMessage?.Asset == null)
-				{
-					throw new Exception("Error: Completing request, try again.");
-				}
+			//	if (existingMessage?.Asset == null)
+			//	{
+			//		throw new Exception("Error: Completing request, try again.");
+			//	}
 
-				existingMessage.Asset.Reviewed = true;
+			//	existingMessage.Asset.Reviewed = true;
 
-				var completedStep = await _db.StepTypes.Where(x => x.Index == 4).FirstOrDefaultAsync();
-				if (completedStep != null)
-				{
-					contentStep.StepTypeId = completedStep.Id;
-				}
-				contentStep.Completed = true;
-				await _db.SaveChangesAsync();
-			}
+			//	var completedStep = await _db.StepTypes.Where(x => x.Index == 4).FirstOrDefaultAsync();
+			//	if (completedStep != null)
+			//	{
+			//		contentStep.StepTypeId = completedStep.Id;
+			//	}
+			//	contentStep.Completed = true;
+			//	await _db.SaveChangesAsync();
+			//}
 			return true;
 		}
 
@@ -528,27 +528,27 @@ namespace SocioleeMarkingApi.Services
 			return true;
 		}
 
-		public async Task<List<UserContent>> GetUserContent(Guid userId)
-		{
-			var userContents = await _db.ContentSteps
-								.Include(x => x.StepType)
-								.Include(x => x.ContentForm)
-									.ThenInclude(x => x.Messages)
-										.ThenInclude(x => x.Asset)
-								.Where(x => x.ContentForm.UserId == userId && x.StepType.Index == 4)
-								.Select(x => new
-								{
-									LatestMessageAsset = x.ContentForm.Messages
-										.Where(x => x.AssetId != null)
-										.OrderByDescending(ca => ca.Created)
-										.FirstOrDefault()
-								})
-								.Select(x => new UserContent(x.LatestMessageAsset))
-								.ToListAsync();
+		//public async Task<List<UserContent>> GetUserContent(Guid userId)
+		//{
+		//	//var userContents = await _db.ContentSteps
+		//	//					.Include(x => x.StepType)
+		//	//					.Include(x => x.ContentForm)
+		//	//						.ThenInclude(x => x.Messages)
+		//	//							.ThenInclude(x => x.Asset)
+		//	//					.Where(x => x.ContentForm.UserId == userId && x.StepType.Index == 4)
+		//	//					.Select(x => new
+		//	//					{
+		//	//						LatestMessageAsset = x.ContentForm.Messages
+		//	//							.Where(x => x.AssetId != null)
+		//	//							.OrderByDescending(ca => ca.Created)
+		//	//							.FirstOrDefault()
+		//	//					})
+		//	//					.Select(x => new UserContent(x.LatestMessageAsset))
+		//	//					.ToListAsync();
 
-			return userContents;
+		//	//return userContents;
 
-		}
+		//}
 
 		public async Task<DesignReview> GetContentDesignReview(Guid messageId)
 		{
@@ -718,6 +718,7 @@ namespace SocioleeMarkingApi.Services
 					?? throw new Exception("Could not locate project.Please try again");
 				existingProject.Name = project.Name;
 				existingProject.InstitutionCourseId = project.Course;
+				existingProject.InstitutionId = project.InstitutionId;
 				existingProject.Year = project.Year;
 				existingProject.YearWeight = project.YearWeight;
 				existingProject.StartDateTime = project.StartDateTime;
@@ -742,6 +743,7 @@ namespace SocioleeMarkingApi.Services
 					Id = Guid.NewGuid(),
 					Name = project.Name,
 					InstitutionCourseId = project.Course,
+					InstitutionId = project.InstitutionId,
 					Year = project.Year,
 					YearWeight = project.YearWeight,
 					StartDateTime = project.StartDateTime,

@@ -64,7 +64,8 @@ namespace SocioleeMarkingApi.Helper
 			services.AddScoped<IContentService, ContentService>();
 			services.AddScoped<IUniqueIds, UniqueIds>();
 			services.AddScoped<IEmailTrackingService, EmailTrackingService>();
-			services.AddScoped<IMessagingService, MessagingService>();
+			//services.AddScoped<IMessagingService, MessagingService>();
+			services.AddScoped<IAdminService, AdminService>();
 			services.AddScoped<PayFastNotifyModelBinder>();
 			services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 			services.AddRazorPages();

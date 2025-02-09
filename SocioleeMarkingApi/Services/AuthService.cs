@@ -177,6 +177,7 @@ namespace SocioleeMarkingApi.Services
 				Email = request.Email,
 				PasswordHash = null,
 				PasswordSalt = null,
+				RoleId = request.RoleId,
 				VerificationToken = CommonFunctions.GenerateRandomCode(6)
 			};
 

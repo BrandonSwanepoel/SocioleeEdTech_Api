@@ -89,12 +89,28 @@ namespace SocioleeMarkingApi.Controllers
 			return Ok(designsLeft);
 		}
 
+		[HttpGet("userProjectCount")]
+		[ProducesResponseType(typeof(int), 200)]
+		public async Task<IActionResult> UserProjectCount(Guid institutionId)
+		{
+			var designCount = await _UserService.GetProjectCount(institutionId);
+			return Ok(designCount);
+		}
+
 		[HttpGet("userStudentCount")]
 		[ProducesResponseType(typeof(int), 200)]
-		public async Task<IActionResult> UserStudentCount(Guid userId)
+		public async Task<IActionResult> UserStudentCount(Guid institutionId)
 		{
-			var designCount = await _UserService.UserStudentCount(userId);
+			var designCount = await _UserService.GetStudentCount(institutionId);
 			return Ok(designCount);
+		}
+
+		[HttpGet("userAnalytics")]
+		[ProducesResponseType(typeof(UserAnalytics), 200)]
+		public async Task<IActionResult> UserAnalytics(Guid userId)
+		{
+			var analytics = await _UserService.UserAnalytics(userId);
+			return Ok(analytics);
 		}
 
 		[HttpGet("getStudentDetails")]

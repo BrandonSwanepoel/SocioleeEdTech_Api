@@ -11,7 +11,11 @@ public partial class InstitutionLecturer
 
     public Guid UserId { get; set; }
 
+    public int? Years { get; set; }
+
     public virtual Institution Institution { get; set; } = null!;
+
+    public virtual ICollection<LecturerCourse> LecturerCourses { get; } = new List<LecturerCourse>();
 
     public virtual User User { get; set; } = null!;
 }

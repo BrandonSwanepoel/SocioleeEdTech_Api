@@ -23,7 +23,11 @@ public partial class StudentProject
 
     public Guid InstitutionCourseId { get; set; }
 
+    public Guid InstitutionId { get; set; }
+
     public virtual User CreatedByNavigation { get; set; } = null!;
+
+    public virtual Institution Institution { get; set; } = null!;
 
     public virtual InstitutionCourse InstitutionCourse { get; set; } = null!;
 

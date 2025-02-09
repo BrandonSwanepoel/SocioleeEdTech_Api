@@ -15,9 +15,13 @@ public partial class Institution
 
     public DateTime? UpdatedAt { get; set; }
 
+    public string? Email { get; set; }
+
     public virtual ICollection<InstitutionCourse> InstitutionCourses { get; } = new List<InstitutionCourse>();
 
     public virtual ICollection<InstitutionLecturer> InstitutionLecturers { get; } = new List<InstitutionLecturer>();
+
+    public virtual ICollection<StudentProject> StudentProjects { get; } = new List<StudentProject>();
 
     public virtual ICollection<Student> Students { get; } = new List<Student>();
 }

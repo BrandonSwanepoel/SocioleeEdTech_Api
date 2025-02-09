@@ -17,10 +17,10 @@ namespace SocioleeMarkingApi.Models
 			Created = message.Created;
 			UserId = message.UserId;
 			TextMessage = message.TextMessage;
-			Asset = message.Asset;
+			//Asset = message.Asset;
 			Deleted = message.Deleted ?? false;
-			ReviewDesign = message.Asset?.ReviewDesign ?? false;
-			Reviewed = message.Asset?.Reviewed ?? false;
+			//ReviewDesign = message.Asset?.ReviewDesign ?? false;
+			//Reviewed = message.Asset?.Reviewed ?? false;
 		}
 
 		public Guid Id { get; set; }

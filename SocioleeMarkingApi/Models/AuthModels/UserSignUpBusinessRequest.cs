@@ -5,18 +5,20 @@ namespace SocioleeMarkingApi.Models
     public class UserSignUpRequest
     {
 
-        public UserSignUpRequest(string fullName, string email) {
+        public UserSignUpRequest(string fullName, string email, Guid roleId) {
             FullName = fullName;
             Email = email;
+            RoleId = roleId;
         }
 
-		public UserSignUpRequest(Guid? id, string? institionName, string fullName, string email,string password)
+		public UserSignUpRequest(Guid? id, string? institionName, string fullName, string email, Guid roleId, string password)
 		{
             Id = id;
             InstitionName = institionName;
 			FullName = fullName;
 			Email = email;
-            Password = password;
+			RoleId = roleId;
+			Password = password;
 		}
 
 
@@ -28,6 +30,7 @@ namespace SocioleeMarkingApi.Models
         public string Email { get; set; } = string.Empty;
         [Required]
         public string Password { get; set; } = string.Empty;
+		public Guid RoleId { get; set; }
 	}
 }
 

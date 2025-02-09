@@ -21,7 +21,8 @@ namespace SocioleeMarkingApi.Services
 		Task<UserDetails> GetUserDetails(Guid userId);
 		Task<bool> UserHasCoupon(Guid userId);
 		Task<int> UserDesignsLeft(Guid userId);
-		Task<int> UserStudentCount(Guid userId);
+		Task<int> GetProjectCount(Guid institutionId);
+		Task<int> GetStudentCount(Guid institutionId);
 		Task<bool> UpdateUserDetails(UserDto user);
 		Task<bool> UpdateUserEmail(UserDto user);
 		Task<Guid?> GetAsset(string type, Guid? userId);
@@ -33,6 +34,7 @@ namespace SocioleeMarkingApi.Services
 		Task<IEnumerable<Course>> GetCourses(Guid institutionId);
 		Task<bool> DeleteStudent(Guid studentId);
 		Task<StudentDTO> GetStudentDetails(Guid studentUserId);
+		Task<UserAnalytics> UserAnalytics(Guid userId);
 	}
     public class UserService : IUserService
     {
@@ -188,12 +190,20 @@ namespace SocioleeMarkingApi.Services
 			return count + coupons;
 		}
 
-		public async Task<int> UserStudentCount(Guid userId)
+		public async Task<int> GetProjectCount(Guid institutionId)
+		{
+			//return await _db.Students
+			//						.CountAsync(form => form.UserId == userId);
+			return await _db.StudentProjects
+								.CountAsync(x => x.InstitutionId == institutionId);
+		}
+
+		public async Task<int> GetStudentCount(Guid institutionId)
 		{
 			//return await _db.Students
 			//						.CountAsync(form => form.UserId == userId);
 			return await _db.Students
-								.CountAsync();
+								.CountAsync(x => x.InstitutionId == institutionId);
 		}
 
 		public async Task<bool> UpdateUserDetails(UserDto user)
@@ -317,7 +327,7 @@ namespace SocioleeMarkingApi.Services
 			}
 			else
 			{
-				var existingStudent = await _db.Users.FirstOrDefaultAsync(x => x.FullName == studentDTO.Name && x.Email == studentDTO.Email);
+				var existingStudent = await _db.Users.FirstOrDefaultAsync(x => x.Email == studentDTO.Email);
 
 				var institution = await _db.Institutions.FirstOrDefaultAsync(x => x.Id == studentDTO.InstitutionId);
 
@@ -326,21 +336,29 @@ namespace SocioleeMarkingApi.Services
 					throw new Exception("Your institution can not be found.");
 				}
 
-				if (existingStudent != null && editStudent == false)
-				{
-					throw new Exception("This student user exists with the same Name and Email");
-				}
-
 
 				var userId = await _uniqueIds.UniqueUserId();
-				var user = new UserSignUpRequest(
-					userId,
-					institution.Name,
-					studentDTO.Name,
-					studentDTO.Email,
-					$"Pass_{CommonFunctions.GenerateRandomCode(6)}");
+				if (existingStudent == null && editStudent == false)
+				{
+					var user = new UserSignUpRequest(
+						userId,
+						institution.Name,
+						studentDTO.Name,
+						studentDTO.Email,
+						Guid.Parse("101f13ab-f7eb-4a13-8fab-8d728db09329"),
+						$"Pass_{CommonFunctions.GenerateRandomCode(6)}");
 
-				await _authService.SignUp(user);
+					await _authService.SignUp(user);
+				}
+				else if (existingStudent != null && editStudent == false)
+				{
+					userId = existingStudent.Id;
+				}
+				var studentExists = await _db.Students.AnyAsync(x => x.UserId == userId);
+				if(studentExists == true)
+				{
+					throw new Exception("Student already exists.");
+				}
 
 				var student = new Student
 				{
@@ -377,6 +395,47 @@ namespace SocioleeMarkingApi.Services
 			await _db.SaveChangesAsync();
 
 			return true;
+		}
+
+		public async Task<UserAnalytics> UserAnalytics(Guid userId)
+		{
+			var studentCourses = await _db.StudentCourses
+			.Include(x => x.InstitutionCourses)
+			.Include(x => x.Student)
+				.ThenInclude(x => x.ProjectRubricStudentMarks)
+			.Where(x => x.Id == userId)
+			.ToListAsync();
+
+			var analytics = new UserAnalytics();
+			double? totalGradeSum = 0;
+			int totalProjects = 0;
+
+			foreach (var item in studentCourses)
+			{
+				var courseMarks = item.Student.ProjectRubricStudentMarks
+					.Where(mark => mark.Project.InstitutionCourseId == item.InstitutionCourses.Id)
+					.Select(mark => mark.Mark)
+					.ToList();
+
+				if (courseMarks.Any())
+				{
+					var courseAnalytics = new UserCourseAnalytics
+					{
+						CourseName = item.InstitutionCourses.Course,
+						AverageGrade = courseMarks.Average()
+					};
+
+					analytics.UserCourseAnalytics.Add(courseAnalytics);
+
+					totalGradeSum += courseMarks.Sum();
+					totalProjects += courseMarks.Count;
+				}
+			}
+
+			// Compute overall average
+			analytics.GradeAve = totalProjects > 0 ? (double)(totalGradeSum / totalProjects) : 0;
+
+			return analytics;
 		}
 	}
 }

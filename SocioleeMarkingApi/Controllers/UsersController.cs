@@ -107,9 +107,9 @@ namespace SocioleeMarkingApi.Controllers
 
 		[HttpGet("userAnalytics")]
 		[ProducesResponseType(typeof(UserAnalytics), 200)]
-		public async Task<IActionResult> UserAnalytics(Guid userId)
+		public async Task<IActionResult> UserAnalytics(Guid studentId)
 		{
-			var analytics = await _UserService.UserAnalytics(userId);
+			var analytics = await _UserService.UserAnalytics(studentId);
 			return Ok(analytics);
 		}
 

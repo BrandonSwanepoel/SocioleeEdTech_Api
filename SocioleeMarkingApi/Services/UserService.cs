@@ -34,7 +34,7 @@ namespace SocioleeMarkingApi.Services
 		Task<IEnumerable<Course>> GetCourses(Guid institutionId);
 		Task<bool> DeleteStudent(Guid studentId);
 		Task<StudentDTO> GetStudentDetails(Guid studentUserId);
-		Task<UserAnalytics> UserAnalytics(Guid userId);
+		Task<UserAnalytics> UserAnalytics(Guid studentId);
 	}
     public class UserService : IUserService
     {
@@ -397,13 +397,14 @@ namespace SocioleeMarkingApi.Services
 			return true;
 		}
 
-		public async Task<UserAnalytics> UserAnalytics(Guid userId)
+		public async Task<UserAnalytics> UserAnalytics(Guid studentId)
 		{
 			var studentCourses = await _db.StudentCourses
 			.Include(x => x.InstitutionCourses)
 			.Include(x => x.Student)
 				.ThenInclude(x => x.ProjectRubricStudentMarks)
-			.Where(x => x.Id == userId)
+				.ThenInclude(x => x.Project)
+			.Where(x => x.StudentId == studentId)
 			.ToListAsync();
 
 			var analytics = new UserAnalytics();
@@ -429,6 +430,16 @@ namespace SocioleeMarkingApi.Services
 
 					totalGradeSum += courseMarks.Sum();
 					totalProjects += courseMarks.Count;
+				}
+				else
+				{
+					var courseAnalytics = new UserCourseAnalytics
+					{
+						CourseName = item.InstitutionCourses.Course,
+						AverageGrade = 0
+					};
+
+					analytics.UserCourseAnalytics.Add(courseAnalytics);
 				}
 			}
 

@@ -19,7 +19,7 @@ public partial class Student
 
     public virtual ICollection<ProjectRubricsOfStudent> ProjectRubricsOfStudents { get; } = new List<ProjectRubricsOfStudent>();
 
-    public virtual ICollection<StudentCourse> StudentCourses { get; } = new List<StudentCourse>();
+    public virtual ICollection<StudentProgramme> StudentProgrammes { get; } = new List<StudentProgramme>();
 
     public virtual ICollection<StudentProjectAssignment> StudentProjectAssignments { get; } = new List<StudentProjectAssignment>();
 

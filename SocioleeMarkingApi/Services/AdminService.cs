@@ -12,7 +12,7 @@ namespace SocioleeMarkingApi.Services
 	{
 		//Lecturer
 		Task<bool> UpsertLecturer(UpsertLecturerDTO studentDTO, bool editStudent);
-		Task<IEnumerable<Course>> GetCourses(Guid institutionId);
+		Task<IEnumerable<Programme>> GetProgrammes(Guid institutionId);
 		Task<bool> DeleteLecturer(Guid lecturerId);
 		Task<InstitutionDTO> GetAdminDetails(Guid institutionId);
 		Task<bool> UpsertInstitution(InstitutionDTO institutionDTO, bool editInstitution);
@@ -43,14 +43,14 @@ namespace SocioleeMarkingApi.Services
 		public async Task<InstitutionDTO> GetAdminDetails(Guid institutionId)
 		{
 			var institution = await _db.Institutions
-				.Include(x => x.InstitutionCourses)
+				.Include(x => x.InstitutionProgrammes)
 				.Select(x => new InstitutionDTO
 				{
 					Id = x.Id,
 					Name = x.Name,
 					Address = x.Address,
 					PhoneNumber = x.PhoneNumber,
-					Courses = x.InstitutionCourses.Select(c => c.Course).ToList()
+					Programmes = x.InstitutionProgrammes.Select(c => c.Programme).ToList()
 				})
 				.FirstOrDefaultAsync(x => x.Id == institutionId);
 
@@ -75,27 +75,27 @@ namespace SocioleeMarkingApi.Services
 				existingInstitution.Email = institutionDTO.Email;
 				existingInstitution.PhoneNumber = institutionDTO.PhoneNumber;
 
-				// Get a list of existing course names for the given institution
-				var existingCourses = await _db.InstitutionCourses
+				// Get a list of existing Programme names for the given institution
+				var existingProgrammes = await _db.InstitutionProgrammes
 					.Where(x => x.InstitutionId == institutionDTO.Id)
-					.Select(x => x.Course) // Select only the course names
+					.Select(x => x.Programme) // Select only the Programme names
 					.ToListAsync();
 
-				// Filter only the courses that are NOT already in the database
-				var newCourses = institutionDTO.Courses
-					.Where(course => !existingCourses.Contains(course)) // Check if course is not in existing list
+				// Filter only the Programmes that are NOT already in the database
+				var newProgrammes = institutionDTO.Programmes
+					.Where(Programme => !existingProgrammes.Contains(Programme)) // Check if Programme is not in existing list
 					.ToList();
 
-				// Add only the new courses
-				foreach (var course in newCourses)
+				// Add only the new Programmes
+				foreach (var Programme in newProgrammes)
 				{
-					var institutionCourse = new InstitutionCourse
+					var institutionProgramme = new InstitutionProgramme
 					{
 						Id = Guid.NewGuid(),
 						InstitutionId = (Guid)institutionDTO.Id,
-						Course = course,
+						Programme = Programme,
 					};
-					_db.InstitutionCourses.Add(institutionCourse);
+					_db.InstitutionProgrammes.Add(institutionProgramme);
 				}
 			}
 			else
@@ -118,15 +118,15 @@ namespace SocioleeMarkingApi.Services
 
 				await _db.Institutions.AddAsync(institution);
 
-				foreach (var course in institutionDTO.Courses)
+				foreach (var Programme in institutionDTO.Programmes)
 				{
-					var institutionCourse = new InstitutionCourse
+					var institutionProgramme = new InstitutionProgramme
 					{
 						Id = Guid.NewGuid(),
 						InstitutionId = (Guid)institutionDTO.Id,
-						Course = course,
+						Programme = Programme,
 					};
-					_db.InstitutionCourses.Add(institutionCourse);
+					_db.InstitutionProgrammes.Add(institutionProgramme);
 				}
 			}
 
@@ -135,12 +135,12 @@ namespace SocioleeMarkingApi.Services
 			return true;
 		}
 
-		public async Task<IEnumerable<Course>> GetCourses(Guid institutionId)
+		public async Task<IEnumerable<Programme>> GetProgrammes(Guid institutionId)
 		{
-			var courses = await _db.InstitutionCourses.Where(x => x.InstitutionId == institutionId)
-				.Select(x => new Course { Id = x.Id, Name = x.Course })
+			var Programmes = await _db.InstitutionProgrammes.Where(x => x.InstitutionId == institutionId)
+				.Select(x => new Programme { Id = x.Id, Name = x.Programme })
 				.ToListAsync();
-			return courses;
+			return Programmes;
 		}
 
 		public async Task<bool> UpsertLecturer(UpsertLecturerDTO lecturerDTO, bool editLecturer)
@@ -154,19 +154,19 @@ namespace SocioleeMarkingApi.Services
 				existingLecturer.User.Email = lecturerDTO.Email;
 				existingLecturer.User.Role.Id = lecturerDTO.Role.Id;
 
-				var existingCourses = await _db.LecturerCourses.Where(x => x.LecturerId == lecturerDTO.Id).ToListAsync();
+				var existingProgrammes = await _db.LecturerProgrammes.Where(x => x.LecturerId == lecturerDTO.Id).ToListAsync();
 
-				_db.LecturerCourses.RemoveRange(existingCourses);
+				_db.LecturerProgrammes.RemoveRange(existingProgrammes);
 				await _db.SaveChangesAsync();
-				foreach (var course in lecturerDTO.Courses)
+				foreach (var Programme in lecturerDTO.Programmes)
 				{
-					var studentCourse = new LecturerCourse
+					var studentProgramme = new LecturerProgramme
 					{
 						Id = Guid.NewGuid(),
 						LecturerId = (Guid)lecturerDTO.Id,
-						InstitutionCoursesId = course,
+						InstitutionProgrammeId = Programme,
 					};
-					_db.LecturerCourses.Add(studentCourse);
+					_db.LecturerProgrammes.Add(studentProgramme);
 				}
 			}
 			else
@@ -205,15 +205,15 @@ namespace SocioleeMarkingApi.Services
 
 				var newUser = await _db.Users.FirstOrDefaultAsync(x => x.Id == userId) ?? throw new Exception("Error creating Lecturer"); ;
 
-				foreach (var course in lecturerDTO.Courses)
+				foreach (var Programme in lecturerDTO.Programmes)
 				{
-					var lecturerCourse = new LecturerCourse
+					var lecturerProgramme = new LecturerProgramme
 					{
 						Id = Guid.NewGuid(),
 						LecturerId = lecturer.Id,
-						InstitutionCoursesId = course,
+						InstitutionProgrammeId = Programme,
 					};
-					_db.LecturerCourses.Add(lecturerCourse);
+					_db.LecturerProgrammes.Add(lecturerProgramme);
 				}
 			}
 
@@ -235,18 +235,18 @@ namespace SocioleeMarkingApi.Services
 		public async Task<IEnumerable<LecturerDTO>> GetLecturers(Guid institutionId)
 		{
 			var lecturers = await _db.InstitutionLecturers
-				.Include(u => u.LecturerCourses)
-						.ThenInclude(sc => sc.InstitutionCourses)
+				.Include(u => u.LecturerProgrammes)
+						.ThenInclude(sc => sc.InstitutionProgramme)
 				.Include(x => x.User)
 					.ThenInclude(x => x.Role)
 				.Select(s => new LecturerDTO(
 					s.User,
 					s.User.Role,
 					s,
-					s.LecturerCourses.Select(sc => new Course
+					s.LecturerProgrammes.Select(sc => new Programme
 					{
-						Id = sc.InstitutionCourses.Id,
-						Name = sc.InstitutionCourses.Course
+						Id = sc.InstitutionProgramme.Id,
+						Name = sc.InstitutionProgramme.Programme
 					}).ToList()
 				))
 				.ToListAsync();

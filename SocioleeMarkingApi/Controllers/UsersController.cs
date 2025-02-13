@@ -129,12 +129,12 @@ namespace SocioleeMarkingApi.Controllers
 			return Ok(studentDetails);
 		}
 
-		[HttpGet("courses")]
-		[ProducesResponseType(typeof(IEnumerable<Course>), 200)]
-		public async Task<IActionResult> GetCourses([FromQuery] Guid institutionId)
+		[HttpGet("Programmes")]
+		[ProducesResponseType(typeof(IEnumerable<Programme>), 200)]
+		public async Task<IActionResult> GetProgrammes([FromQuery] Guid institutionId)
 		{
-			var courses = await _UserService.GetCourses(institutionId);
-			return Ok(courses);
+			var Programmes = await _UserService.GetProgrammes(institutionId);
+			return Ok(Programmes);
 		}
 
 		[HttpDelete("deleteStudent")]

@@ -15,7 +15,7 @@ public partial class InstitutionLecturer
 
     public virtual Institution Institution { get; set; } = null!;
 
-    public virtual ICollection<LecturerCourse> LecturerCourses { get; } = new List<LecturerCourse>();
+    public virtual ICollection<LecturerProgramme> LecturerProgrammes { get; } = new List<LecturerProgramme>();
 
     public virtual User User { get; set; } = null!;
 }

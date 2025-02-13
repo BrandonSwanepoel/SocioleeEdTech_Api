@@ -14,7 +14,7 @@ namespace SocioleeMarkingApi.Services
 {
 	public interface IBlobStorageService
 	{
-		Task<string> GetBlobFile(string url);
+		Task<bool> GetBlobFile(string url);
 		//Task<string> UploadBlobFile(string filePath, string filename);
 		Task DeleteBlob(string path);
 		Task<Uri> UploadFileBlobAsync(string blobContainerName, Stream content, string contentType, string fileName);
@@ -53,18 +53,14 @@ namespace SocioleeMarkingApi.Services
 			return index;
 		}
 
-		public async Task<string> GetBlobFile(string url)
+		public async Task<bool> GetBlobFile(string url)
 		{
-			return null;
-			//var imageDetails = new Uri(url).Segments;
-			//var client = _blobServiceClient.GetBlobContainerClient(imageDetails[1]);
+			var imageDetails = new Uri(url).Segments;
+			var client = _blobServiceClient.GetBlobContainerClient(imageDetails[1]);
 
-			//var blobClient = client.GetBlobClient(imageDetails[2]);
+			var blobClient = client.GetBlobClient(imageDetails[2]);
 
-			//if (!blobClient.Exists())
-			//{
-			//	return null;
-			//}
+			return blobClient.Exists();
 
 			//var sasBuilder = new BlobSasBuilder
 			//{

@@ -31,7 +31,7 @@ namespace SocioleeMarkingApi.Services
 
 		//Student
 		Task<bool> UpsertStudent(UpsertStudentDTO studentDTO, bool editStudent);
-		Task<IEnumerable<Course>> GetCourses(Guid institutionId);
+		Task<IEnumerable<Programme>> GetProgrammes(Guid institutionId);
 		Task<bool> DeleteStudent(Guid studentId);
 		Task<StudentDTO> GetStudentDetails(Guid studentUserId);
 		Task<UserAnalytics> UserAnalytics(Guid studentId);
@@ -269,16 +269,16 @@ namespace SocioleeMarkingApi.Services
 		{
 			var students = await _db.Students
 				.Where(x => x.Id == studentUserId)
-				.Include(u => u.StudentCourses)
-						.ThenInclude(sc => sc.InstitutionCourses)
+				.Include(u => u.StudentProgrammes)
+						.ThenInclude(sc => sc.InstitutionProgramme)
 				.Include(x => x.User)
 				.Select(s => new Models.StudentDTO(
 					s.User,
 					s,
-					s.StudentCourses.Select(sc => new Course
+					s.StudentProgrammes.Select(sc => new Programme
 					{
-						Id = sc.InstitutionCourses.Id,
-						Name = sc.InstitutionCourses.Course
+						Id = sc.InstitutionProgramme.Id,
+						Name = sc.InstitutionProgramme.Programme
 					}).ToList()
 				))
 				.FirstOrDefaultAsync();
@@ -292,12 +292,12 @@ namespace SocioleeMarkingApi.Services
 			}
 		}
 
-		public async Task<IEnumerable<Course>> GetCourses(Guid institutionId)
+		public async Task<IEnumerable<Programme>> GetProgrammes(Guid institutionId)
 		{
-			var courses = await _db.InstitutionCourses.Where(x => x.InstitutionId == institutionId)
-				.Select(x => new Course{ Id = x.Id, Name = x.Course})
+			var Programmes = await _db.InstitutionProgrammes.Where(x => x.InstitutionId == institutionId)
+				.Select(x => new Programme{ Id = x.Id, Name = x.Programme})
 				.ToListAsync();
-			return courses;
+			return Programmes;
 		}
 
 		public async Task<bool> UpsertStudent(UpsertStudentDTO studentDTO, bool editStudent)
@@ -310,19 +310,19 @@ namespace SocioleeMarkingApi.Services
 				existingStudent.Year = studentDTO.Year;
 				existingStudent.User.Email = studentDTO.Email;
 
-				var existingCourses = await _db.StudentCourses.Where(x => x.StudentId == studentDTO.Id).ToListAsync();
+				var existingProgrammes = await _db.StudentProgrammes.Where(x => x.StudentId == studentDTO.Id).ToListAsync();
 
-				_db.StudentCourses.RemoveRange(existingCourses);
+				_db.StudentProgrammes.RemoveRange(existingProgrammes);
 				await _db.SaveChangesAsync() ;
-				foreach (var course in studentDTO.Course)
+				foreach (var Programme in studentDTO.Programme)
 				{
-					var studentCourse = new StudentCourse
+					var studentProgramme = new StudentProgramme
 					{
 						Id = Guid.NewGuid(),
 						StudentId = (Guid)studentDTO.Id,
-						InstitutionCoursesId = course,
+						InstitutionProgrammeId = Programme,
 					};
-					_db.StudentCourses.Add(studentCourse);
+					_db.StudentProgrammes.Add(studentProgramme);
 				}
 			}
 			else
@@ -370,15 +370,15 @@ namespace SocioleeMarkingApi.Services
 
 				await _db.Students.AddAsync(student);
 
-				foreach (var course in studentDTO.Course)
+				foreach (var Programme in studentDTO.Programme)
 				{
-					var studentCourse = new StudentCourse
+					var studentProgramme = new StudentProgramme
 					{
 						Id = Guid.NewGuid(),
 						StudentId = student.Id,
-						InstitutionCoursesId = course,
+						InstitutionProgrammeId = Programme,
 					};
-					_db.StudentCourses.Add(studentCourse);
+					_db.StudentProgrammes.Add(studentProgramme);
 				}
 			}
 			
@@ -399,8 +399,8 @@ namespace SocioleeMarkingApi.Services
 
 		public async Task<UserAnalytics> UserAnalytics(Guid studentId)
 		{
-			var studentCourses = await _db.StudentCourses
-			.Include(x => x.InstitutionCourses)
+			var studentProgrammes = await _db.StudentProgrammes
+			.Include(x => x.InstitutionProgramme)
 			.Include(x => x.Student)
 				.ThenInclude(x => x.ProjectRubricStudentMarks)
 				.ThenInclude(x => x.Project)
@@ -411,35 +411,35 @@ namespace SocioleeMarkingApi.Services
 			double? totalGradeSum = 0;
 			int totalProjects = 0;
 
-			foreach (var item in studentCourses)
+			foreach (var item in studentProgrammes)
 			{
-				var courseMarks = item.Student.ProjectRubricStudentMarks
-					.Where(mark => mark.Project.InstitutionCourseId == item.InstitutionCourses.Id)
+				var programmeMarks = item.Student.ProjectRubricStudentMarks
+					.Where(mark => mark.Project.InstitutionProgrammeId == item.InstitutionProgramme.Id)
 					.Select(mark => mark.Mark)
 					.ToList();
 
-				if (courseMarks.Any())
+				if (programmeMarks.Any())
 				{
-					var courseAnalytics = new UserCourseAnalytics
+					var ProgrammeAnalytics = new UserProgrammeAnalytics
 					{
-						CourseName = item.InstitutionCourses.Course,
-						AverageGrade = courseMarks.Average()
+						ProgrammeName = item.InstitutionProgramme.Programme,
+						AverageGrade = programmeMarks.Average()
 					};
 
-					analytics.UserCourseAnalytics.Add(courseAnalytics);
+					analytics.UserProgrammeAnalytics.Add(ProgrammeAnalytics);
 
-					totalGradeSum += courseMarks.Sum();
-					totalProjects += courseMarks.Count;
+					totalGradeSum += programmeMarks.Sum();
+					totalProjects += programmeMarks.Count;
 				}
 				else
 				{
-					var courseAnalytics = new UserCourseAnalytics
+					var ProgrammeAnalytics = new UserProgrammeAnalytics
 					{
-						CourseName = item.InstitutionCourses.Course,
+						ProgrammeName = item.InstitutionProgramme.Programme,
 						AverageGrade = 0
 					};
 
-					analytics.UserCourseAnalytics.Add(courseAnalytics);
+					analytics.UserProgrammeAnalytics.Add(ProgrammeAnalytics);
 				}
 			}
 

@@ -134,36 +134,36 @@ namespace SocioleeMarkingApi.Models
 
 	public class StudentDTO
 	{
-		public StudentDTO(User user, Student student, IEnumerable<Course> courses)
+		public StudentDTO(User user, Student student, IEnumerable<Programme> Programmes)
 		{
 			Id = student.Id;
 			Name = user.FullName;
 			Year = student.Year;
-			Course = courses;
+			Programme = Programmes;
 			Email = user.Email;
 		}
 		public Guid Id { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
-		public IEnumerable<Course> Course { get; set; } = null!;
+		public IEnumerable<Programme> Programme { get; set; } = null!;
 		public string Email { get; set; } = null!;
 	}
 
 	public class LecturerDTO
 	{
-		public LecturerDTO(User user, RoleType role, InstitutionLecturer lecturer, IEnumerable<Course> courses)
+		public LecturerDTO(User user, RoleType role, InstitutionLecturer lecturer, IEnumerable<Programme> Programmes)
 		{
 			Id = lecturer.Id;
 			Name = user.FullName;
 			Year = lecturer.Years;
-			Course = courses;
+			Programme = Programmes;
 			Email = user.Email;
 			Role = role;
 		}
 		public Guid Id { get; set; }
 		public string Name { get; set; } = null!;
 		public int? Year { get; set; }
-		public IEnumerable<Course> Course { get; set; } = null!;
+		public IEnumerable<Programme> Programme { get; set; } = null!;
 		public string Email { get; set; } = null!;
 		public RoleType Role { get; set; } = null!;
 	}
@@ -174,23 +174,23 @@ namespace SocioleeMarkingApi.Models
 		public Guid InstitutionId { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
-		public List<Guid> Course { get; set; } = new List<Guid>();
+		public List<Guid> Programme { get; set; } = new List<Guid>();
 		public string Email { get; set; } = null!;
 	}
 
 	public class UserAnalytics
 	{
 		public double GradeAve { get; set; }
-		public List<UserCourseAnalytics> UserCourseAnalytics { get; set; } = new List<UserCourseAnalytics>();
+		public List<UserProgrammeAnalytics> UserProgrammeAnalytics { get; set; } = new List<UserProgrammeAnalytics>();
 	}
 
-	public class UserCourseAnalytics
+	public class UserProgrammeAnalytics
 	{
-		public string CourseName { get; set; } = null!;
+		public string ProgrammeName { get; set; } = null!;
 		public double AverageGrade { get; set; }
 	}
 
-	public class Course
+	public class Programme
 	{
 		public Guid Id { get; set; }
 		public string Name { get; set; } = null!;
@@ -243,11 +243,11 @@ namespace SocioleeMarkingApi.Models
 		public Guid? Id { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
-		public Course Course { get; set; }
+		public Programme Programme { get; set; }
+		public string Subject { get; set; } = null!;
 		public double YearWeight { get; set; }
 		public DateTime? StartDateTime { get; set; }
 		public DateTime? EndDateTime { get; set; }
-		public Guid CreatedBy { get; set; }
 	}
 
 	public class UpsertStudentProjectDTO
@@ -256,7 +256,8 @@ namespace SocioleeMarkingApi.Models
 		public Guid InstitutionId { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
-		public Guid Course { get; set; }
+		public Guid Programme { get; set; }
+		public string Subject { get; set; } = null!;
 		public double YearWeight { get; set; }
 		public DateTime? StartDateTime { get; set; }
 		public DateTime? EndDateTime { get; set; }
@@ -268,14 +269,14 @@ namespace SocioleeMarkingApi.Models
 		public Guid Id { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
-		//public string Course { get; set; } = null!;
+		//public string Programme { get; set; } = null!;
 		public bool HasProject { get; set; }
 	}
 
 	public class UpsertProjectDTO
 	{
 		public Guid? Id { get; set; }
-		public Guid InstitutionCourseId { get; set; }
+		public Guid InstitutionProgrammeId { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
 		public string Email { get; set; } = null!;
@@ -293,7 +294,7 @@ namespace SocioleeMarkingApi.Models
 	{
 		public Guid Id { get; set; }
 		public string Name { get; set; } = null!;
-		public Course Course { get; set; } = null!;
+		public Programme Programme { get; set; } = null!;
 		public int Year { get; set; }
 		public double YearWeight { get; set; }
 		public double? Mark { get; set; }

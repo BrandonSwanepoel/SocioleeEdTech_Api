@@ -164,16 +164,16 @@ namespace SocioleeMarkingApi.Services
 		public async Task<IEnumerable<Models.StudentDTO>> GetStudents(Guid userId)
 		{
 			var students = await _db.Students
-				.Include(u => u.StudentCourses)
-						.ThenInclude(sc => sc.InstitutionCourses)
+				.Include(u => u.StudentProgrammes)
+						.ThenInclude(sc => sc.InstitutionProgramme)
 				.Include(x => x.User)
 				.Select(s => new Models.StudentDTO(
 					s.User,
 					s,
-					s.StudentCourses.Select(sc => new Course
+					s.StudentProgrammes.Select(sc => new Programme
 					{
-						Id = sc.InstitutionCourses.Id,
-						Name = sc.InstitutionCourses.Course
+						Id = sc.InstitutionProgramme.Id,
+						Name = sc.InstitutionProgramme.Programme
 					}).ToList()
 				))
 				.ToListAsync();
@@ -717,7 +717,8 @@ namespace SocioleeMarkingApi.Services
 				var existingProject = await _db.StudentProjects.FirstOrDefaultAsync(x => x.Id == project.Id)
 					?? throw new Exception("Could not locate project.Please try again");
 				existingProject.Name = project.Name;
-				existingProject.InstitutionCourseId = project.Course;
+				existingProject.Subject = project.Subject;
+				existingProject.InstitutionProgrammeId = project.Programme;
 				existingProject.InstitutionId = project.InstitutionId;
 				existingProject.Year = project.Year;
 				existingProject.YearWeight = project.YearWeight;
@@ -729,20 +730,21 @@ namespace SocioleeMarkingApi.Services
 
 				var existingProject = await _db.StudentProjects
 								.Where(x => x.Year == project.Year &&
-								x.InstitutionCourseId == project.Course &&
+								x.InstitutionProgrammeId == project.Programme &&
 								x.Name == project.Name)
 								.FirstOrDefaultAsync();
 
 				if (existingProject != null && editProject == false)
 				{
-					throw new Exception("This project exists with the same Name, Course and year.");
+					throw new Exception("This project exists with the same Name, Programme and year.");
 				}
 
 				var studentProject = new StudentProject
 				{
 					Id = Guid.NewGuid(),
 					Name = project.Name,
-					InstitutionCourseId = project.Course,
+					Subject = project.Subject,
+					InstitutionProgrammeId = project.Programme,
 					InstitutionId = project.InstitutionId,
 					Year = project.Year,
 					YearWeight = project.YearWeight,
@@ -793,11 +795,11 @@ namespace SocioleeMarkingApi.Services
 
 		public async Task<List<StudentProjectDetailsDTO>> GetProjects(Guid? userId, bool studentProjects)
 		{
-			var projects = _db.StudentProjects.Include(x => x.InstitutionCourse).Select(x => new StudentProjectDetailsDTO
+			var projects = _db.StudentProjects.Include(x => x.InstitutionProgramme).Select(x => new StudentProjectDetailsDTO
 			{
 				Id = x.Id,
 				Name = x.Name,
-				Course = new Course { Id = x.InstitutionCourse.Id, Name = x.InstitutionCourse.Course },
+				Programme = new Programme { Id = x.InstitutionProgramme.Id, Name = x.InstitutionProgramme.Programme },
 				CreatedBy = x.CreatedBy,
 				Year = x.Year,
 				YearWeight = x.YearWeight,
@@ -817,7 +819,7 @@ namespace SocioleeMarkingApi.Services
 		public async Task<List<StudentProjectDetailsDTO>> GetStudentProjects(Guid studentId)
 		{
 			var projects = _db.StudentProjects
-				.Include(x => x.InstitutionCourse)
+				.Include(x => x.InstitutionProgramme)
 				.Include(sp => sp.StudentProjectAssignments)
 				.Include(m => m.ProjectRubricStudentMarks)
 				.Where(sp => sp.StudentProjectAssignments.Any(a => a.AssignedTo == studentId))
@@ -825,7 +827,7 @@ namespace SocioleeMarkingApi.Services
 				{
 					Id = x.Id,
 					Name = x.Name,
-					Course = new Course { Id = x.InstitutionCourse.Id, Name = x.InstitutionCourse.Course },
+					Programme = new Programme { Id = x.InstitutionProgramme.Id, Name = x.InstitutionProgramme.Programme },
 					CreatedBy = x.CreatedBy,
 					Year = x.Year,
 					YearWeight = x.YearWeight,
@@ -842,17 +844,17 @@ namespace SocioleeMarkingApi.Services
 
 		public async Task<StudentProjectDTO> GetProjectDetails(Guid projectId)
 		{
-			var project = await _db.StudentProjects.Include(x => x.InstitutionCourse)
+			var project = await _db.StudentProjects.Include(x => x.InstitutionProgramme)
 				.Select(x => new StudentProjectDTO
 				{
 					Id = x.Id,
 					Name = x.Name,
 					Year = x.Year,
+					Subject = x.Subject,
 					YearWeight = x.YearWeight,
-					CreatedBy = x.CreatedBy,
 					StartDateTime = x.StartDateTime,
 					EndDateTime = x.EndDateTime,
-					Course = new Course { Id = x.InstitutionCourse.Id, Name = x.InstitutionCourse.Course}
+					Programme = new Programme { Id = x.InstitutionProgramme.Id, Name = x.InstitutionProgramme.Programme}
 
 				})
 				.FirstOrDefaultAsync(x => x.Id == projectId) ?? throw new Exception("Can't find project Details");
@@ -865,8 +867,8 @@ namespace SocioleeMarkingApi.Services
 			var students = _db.Students
 						.Include(x => x.User)
 						.Include(s => s.StudentProjectAssignments)
-						.Include(x => x.StudentCourses)
-						.Where(x => x.StudentCourses.Any(x => x.InstitutionCoursesId == projectDetails.Course.Id) && x.Year == projectDetails.Year)
+						.Include(x => x.StudentProgrammes)
+						.Where(x => x.StudentProgrammes.Any(x => x.InstitutionProgrammeId == projectDetails.Programme.Id) && x.Year == projectDetails.Year)
 						.Select(s => new ProjectStudent
 						{
 							Id = s.Id,

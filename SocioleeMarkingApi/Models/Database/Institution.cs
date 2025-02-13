@@ -17,9 +17,9 @@ public partial class Institution
 
     public string? Email { get; set; }
 
-    public virtual ICollection<InstitutionCourse> InstitutionCourses { get; } = new List<InstitutionCourse>();
-
     public virtual ICollection<InstitutionLecturer> InstitutionLecturers { get; } = new List<InstitutionLecturer>();
+
+    public virtual ICollection<InstitutionProgramme> InstitutionProgrammes { get; } = new List<InstitutionProgramme>();
 
     public virtual ICollection<StudentProject> StudentProjects { get; } = new List<StudentProject>();
 

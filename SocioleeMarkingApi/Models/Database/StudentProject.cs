@@ -21,15 +21,17 @@ public partial class StudentProject
 
     public DateTime? EndDateTime { get; set; }
 
-    public Guid InstitutionCourseId { get; set; }
+    public Guid InstitutionProgrammeId { get; set; }
 
     public Guid InstitutionId { get; set; }
+
+    public string Subject { get; set; } = null!;
 
     public virtual User CreatedByNavigation { get; set; } = null!;
 
     public virtual Institution Institution { get; set; } = null!;
 
-    public virtual InstitutionCourse InstitutionCourse { get; set; } = null!;
+    public virtual InstitutionProgramme InstitutionProgramme { get; set; } = null!;
 
     public virtual ICollection<ProjectRubricStudentMark> ProjectRubricStudentMarks { get; } = new List<ProjectRubricStudentMark>();
 

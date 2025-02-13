@@ -296,6 +296,15 @@
 /Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.pdb
 /Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.genruntimeconfig.cache
 /Users/brandonswanepoel/Documents/Sociolee Marking Software/SocioleeMarkingApi/SocioleeMarkingApi/obj/Debug/net6.0/ref/SocioleeMarkingApi.dll
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.csproj.AssemblyReference.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.AssemblyInfoInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.AssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.csproj.CoreCompileInputs.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.MvcApplicationPartsAssemblyInfo.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.RazorAssemblyInfo.cache
+/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.RazorAssemblyInfo.cs
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/bin/Debug/net6.0/appsettings.Development.json
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/bin/Debug/net6.0/appsettings.json
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/bin/Debug/net6.0/local.settings.json
@@ -422,15 +431,6 @@
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.dll
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/bin/Debug/net6.0/RazorHtmlEmails.RazorClassLib.pdb
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/bin/Debug/net6.0/RazorHtmlEmails.Common.pdb
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.csproj.AssemblyReference.cache
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.GeneratedMSBuildEditorConfig.editorconfig
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.AssemblyInfoInputs.cache
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.AssemblyInfo.cs
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.csproj.CoreCompileInputs.cache
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.MvcApplicationPartsAssemblyInfo.cs
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.MvcApplicationPartsAssemblyInfo.cache
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.RazorAssemblyInfo.cache
-/Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/SocioleeMarkingApi.RazorAssemblyInfo.cs
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/staticwebassets/msbuild.SocioleeMarkingApi.Microsoft.AspNetCore.StaticWebAssets.props
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/staticwebassets/msbuild.build.SocioleeMarkingApi.props
 /Users/brandonswanepoel/Documents/SocioleeEdTech-Projects/SocioleeEdTech_Api/SocioleeMarkingApi/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.SocioleeMarkingApi.props

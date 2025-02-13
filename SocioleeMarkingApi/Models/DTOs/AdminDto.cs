@@ -17,7 +17,7 @@ namespace SocioleeMarkingApi.Models.DTOs
 
 		public string? PhoneNumber { get; set; }
 
-		public List<string> Courses { get; set; } = new List<string>();
+		public List<string> Programmes { get; set; } = new List<string>();
 	}
 
 	public class UpsertLecturerDTO
@@ -26,7 +26,7 @@ namespace SocioleeMarkingApi.Models.DTOs
 		public Guid InstitutionId { get; set; }
 		public string Name { get; set; } = null!;
 		public int? Years { get; set; }
-		public List<Guid>? Courses { get; set; } = new List<Guid>();
+		public List<Guid>? Programmes { get; set; } = new List<Guid>();
 		public string Email { get; set; } = null!;
 		public RoleType Role { get; set; } = null!;
 	}

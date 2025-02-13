@@ -35,11 +35,11 @@ public partial class SocioleeDesignContext : DbContext
 
     public virtual DbSet<Institution> Institutions { get; set; }
 
-    public virtual DbSet<InstitutionCourse> InstitutionCourses { get; set; }
-
     public virtual DbSet<InstitutionLecturer> InstitutionLecturers { get; set; }
 
-    public virtual DbSet<LecturerCourse> LecturerCourses { get; set; }
+    public virtual DbSet<InstitutionProgramme> InstitutionProgrammes { get; set; }
+
+    public virtual DbSet<LecturerProgramme> LecturerProgrammes { get; set; }
 
     public virtual DbSet<Message> Messages { get; set; }
 
@@ -63,7 +63,7 @@ public partial class SocioleeDesignContext : DbContext
 
     public virtual DbSet<Student> Students { get; set; }
 
-    public virtual DbSet<StudentCourse> StudentCourses { get; set; }
+    public virtual DbSet<StudentProgramme> StudentProgrammes { get; set; }
 
     public virtual DbSet<StudentProject> StudentProjects { get; set; }
 
@@ -249,20 +249,6 @@ public partial class SocioleeDesignContext : DbContext
                 .HasColumnType("datetime");
         });
 
-        modelBuilder.Entity<InstitutionCourse>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Institut__3214EC07081A4E31");
-
-            entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            entity.Property(e => e.Course)
-                .HasMaxLength(255)
-                .IsUnicode(false);
-
-            entity.HasOne(d => d.Institution).WithMany(p => p.InstitutionCourses)
-                .HasForeignKey(d => d.InstitutionId)
-                .HasConstraintName("FK__Instituti__Insti__29AC2CE0");
-        });
-
         modelBuilder.Entity<InstitutionLecturer>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Institut__3214EC07503C148F");
@@ -278,18 +264,32 @@ public partial class SocioleeDesignContext : DbContext
                 .HasConstraintName("FK__Instituti__UserI__178D7CA5");
         });
 
-        modelBuilder.Entity<LecturerCourse>(entity =>
+        modelBuilder.Entity<InstitutionProgramme>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Institut__3214EC07081A4E31");
+
+            entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Programme)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+
+            entity.HasOne(d => d.Institution).WithMany(p => p.InstitutionProgrammes)
+                .HasForeignKey(d => d.InstitutionId)
+                .HasConstraintName("FK__Instituti__Insti__29AC2CE0");
+        });
+
+        modelBuilder.Entity<LecturerProgramme>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Lecturer__3214EC072552B1D9");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
-            entity.HasOne(d => d.InstitutionCourses).WithMany(p => p.LecturerCourses)
-                .HasForeignKey(d => d.InstitutionCoursesId)
+            entity.HasOne(d => d.InstitutionProgramme).WithMany(p => p.LecturerProgrammes)
+                .HasForeignKey(d => d.InstitutionProgrammeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_LecturerCourses_InstitutionCoursesId");
 
-            entity.HasOne(d => d.Lecturer).WithMany(p => p.LecturerCourses)
+            entity.HasOne(d => d.Lecturer).WithMany(p => p.LecturerProgrammes)
                 .HasForeignKey(d => d.LecturerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_LecturerCourses_LecturerId");
@@ -465,17 +465,17 @@ public partial class SocioleeDesignContext : DbContext
                 .HasConstraintName("fk_student_userId");
         });
 
-        modelBuilder.Entity<StudentCourse>(entity =>
+        modelBuilder.Entity<StudentProgramme>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__StudentC__3214EC07FC1949BB");
 
             entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
-            entity.HasOne(d => d.InstitutionCourses).WithMany(p => p.StudentCourses)
-                .HasForeignKey(d => d.InstitutionCoursesId)
+            entity.HasOne(d => d.InstitutionProgramme).WithMany(p => p.StudentProgrammes)
+                .HasForeignKey(d => d.InstitutionProgrammeId)
                 .HasConstraintName("FK__StudentCo__Insti__3335971A");
 
-            entity.HasOne(d => d.Student).WithMany(p => p.StudentCourses)
+            entity.HasOne(d => d.Student).WithMany(p => p.StudentProgrammes)
                 .HasForeignKey(d => d.StudentId)
                 .HasConstraintName("FK__StudentCo__Stude__3429BB53");
         });
@@ -491,21 +491,22 @@ public partial class SocioleeDesignContext : DbContext
             entity.Property(e => e.EndDateTime).HasColumnType("datetime");
             entity.Property(e => e.Name).HasMaxLength(255);
             entity.Property(e => e.StartDateTime).HasColumnType("datetime");
+            entity.Property(e => e.Subject).HasMaxLength(100);
 
             entity.HasOne(d => d.CreatedByNavigation).WithMany(p => p.StudentProjects)
                 .HasForeignKey(d => d.CreatedBy)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_StudentProjects_Users");
 
-            entity.HasOne(d => d.InstitutionCourse).WithMany(p => p.StudentProjects)
-                .HasForeignKey(d => d.InstitutionCourseId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_institution_courseId");
-
             entity.HasOne(d => d.Institution).WithMany(p => p.StudentProjects)
                 .HasForeignKey(d => d.InstitutionId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_StudentProjects_institutionId");
+
+            entity.HasOne(d => d.InstitutionProgramme).WithMany(p => p.StudentProjects)
+                .HasForeignKey(d => d.InstitutionProgrammeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_institution_courseId");
         });
 
         modelBuilder.Entity<StudentProjectAssignment>(entity =>

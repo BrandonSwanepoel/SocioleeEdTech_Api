@@ -52,6 +52,7 @@ namespace SocioleeMarkingApi.Services
 		public async Task<SignInResponse> SignIn(UserSignInRequest request)
         {
             var existingUser = await _db.Users
+				.Include(x => x.Students)
 				.Include(x => x.Role)
 				.FirstOrDefaultAsync(x => x.Email == request.Email) ?? throw new HttpRequestException("Sign in details are incorrect");
 			//if (existingUser.VerifiedAt == null)
@@ -60,10 +61,14 @@ namespace SocioleeMarkingApi.Services
 			//         }
 
 			Guid institutionId;
+			Guid? studentId = null;
 
-			if (request.IsStudent)
+			if (existingUser.Students.Any())
 			{
-				institutionId = await _db.Students.Where(x => x.UserId == existingUser.Id).Select(x => x.InstitutionId).FirstOrDefaultAsync();
+				var student = await _db.Students.Where(x => x.UserId == existingUser.Id).FirstOrDefaultAsync() ?? throw new HttpRequestException("Can't find your student details");
+
+				institutionId = student.InstitutionId;
+				studentId = student.Id;
 			}
 			else
 			{
@@ -80,7 +85,7 @@ namespace SocioleeMarkingApi.Services
             var refreshToken = _jwtUtils.GenerateRefreshToken();
             SetRefreshToken(refreshToken, existingUser);
 
-            return new SignInResponse(existingUser.Id, existingUser.FullName,existingUser.Email, existingUser.IsAdmin, existingUser.RoleId, institutionId, token, refreshToken.Token, refreshToken.Expires, existingUser.VerifiedAt == null);
+            return new SignInResponse(existingUser.Id, existingUser.FullName,existingUser.Email, existingUser.IsAdmin, existingUser.RoleId, institutionId, studentId, token, refreshToken.Token, refreshToken.Expires, existingUser.VerifiedAt == null);
 
 			static bool VerifyPasswordHash(string password, byte[] passwordSalt, byte[] passwordHash)
             {

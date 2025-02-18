@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
 using Azure.Storage.Blobs;
 using FirebaseAdmin.Messaging;
 using Microsoft.EntityFrameworkCore;
@@ -49,6 +50,9 @@ namespace SocioleeMarkingApi.Services
 		Task<bool> SaveRubricForProjectOfStudent(List<ProjectRubricOfStudentMarkedDTO> projectRubricOfStudentMarkedDTO);
 		Task<List<StudentProjectDetailsDTO>> GetStudentProjects(Guid studentId);
 		Task<IEnumerable<ProjectStudent>> GetProjectStudentsToAdd(StudentProjectDTO projectDetails);
+		Task<bool> UpsertProjectFiles(UpsertStudentProjectFileDTO projectFiles);
+		Task<List<StudentProjectFileDTO>> GetProjectFiles(Guid projectId, Guid studentId);
+		Task<bool> DeleteProjectFile(DeleteStudentProjectFileDTO projectFile);
 	}
 
 	public class ContentService : IContentService
@@ -56,14 +60,16 @@ namespace SocioleeMarkingApi.Services
 		private readonly BlobServiceClient _blobServiceClient;
 		private readonly IUniqueIds _uniqueIds;
 		private readonly IRegisterAccountService _registerAccountService;
+		private readonly IBlobStorageService _blobStorageService;
 
 		private readonly SocioleeDesignContext _db;
-		public ContentService(SocioleeDesignContext dbContext, IUniqueIds uniqueIds, BlobServiceClient blobServiceClient, IRegisterAccountService registerAccountService)
+		public ContentService(SocioleeDesignContext dbContext, IUniqueIds uniqueIds, BlobServiceClient blobServiceClient, IRegisterAccountService registerAccountService, IBlobStorageService blobStorageService)
 		{
 			_db = dbContext;
 			_uniqueIds = uniqueIds;
 			_blobServiceClient = blobServiceClient;
 			_registerAccountService = registerAccountService;
+			_blobStorageService = blobStorageService;
 		}
 
 		public async Task<ContentForm> Create(ContentFromDto request)
@@ -1072,6 +1078,75 @@ namespace SocioleeMarkingApi.Services
 			_db.ProjectRubrics.AddRange(projectRubricDetails);
 			await _db.SaveChangesAsync();
 
+			return true;
+		}
+
+		public async Task<bool> UpsertProjectFiles(UpsertStudentProjectFileDTO projectFiles)
+		{
+			var existingFileNames = await _db.ProjectFiles
+				.Where(x => projectFiles.ProjectId == x.ProjectId && projectFiles.StudentId == x.StudentId)
+				.Select(x => x.Name)
+				.ToListAsync();
+
+			projectFiles.Files = projectFiles.Files.Where(x => !existingFileNames.Contains(x.FileName)).ToList();
+
+			if (!projectFiles.Files.Any())
+			{
+				return true;
+			}
+
+			var projectFilesDetails = new List<ProjectFile>();
+
+			foreach (var file in projectFiles.Files)
+			{
+				var projectFile = new ProjectFile
+				{
+					Id = Guid.NewGuid(),
+					ProjectId = projectFiles.ProjectId,
+					StudentId = projectFiles.StudentId,
+					Name = file.FileName,
+					Type = file.ContentType,
+					UpdatedAt = CommonFunctions.CurrentDateTime(),
+				};
+
+				if (file == null)
+				{
+					throw new Exception("File upload error. Please try again");
+				}
+
+				var result = await _blobStorageService.UploadFileBlobAsync(
+						$"projectfiles",
+						file.OpenReadStream(),
+						file.ContentType,
+						$"{projectFiles.ProjectId}/{projectFiles.StudentId}/{projectFile.Name}");
+
+				var toReturn = result.AbsoluteUri ?? throw new Exception("File upload error. Please try again");
+
+				projectFilesDetails.Add(projectFile);
+			};
+
+			_db.ProjectFiles.AddRange(projectFilesDetails);
+			await _db.SaveChangesAsync();
+
+			return true;
+		}
+
+		public async Task<List<StudentProjectFileDTO>> GetProjectFiles(Guid projectId, Guid studentId)
+		{
+			var projectFiles = await _db.ProjectFiles
+								.Where(x => projectId == x.ProjectId && studentId == x.StudentId)
+								.Select(x => new StudentProjectFileDTO { Id = x.Id, Name = x.Name, Type= x.Type, LastUpdated = x.UpdatedAt })
+								.ToListAsync();
+			return projectFiles;
+		}
+
+		public async Task<bool> DeleteProjectFile(DeleteStudentProjectFileDTO projectFiles)
+		{
+			var existingProjectFile = await _db.ProjectFiles
+				.FirstOrDefaultAsync(x => projectFiles.ProjectId == x.ProjectId && projectFiles.StudentId == x.StudentId) ?? throw new Exception("Error removing file. Please try again.");
+
+			_db.ProjectFiles.Remove(existingProjectFile);
+			await _db.SaveChangesAsync();
 			return true;
 		}
 	}

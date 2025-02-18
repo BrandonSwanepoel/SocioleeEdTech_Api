@@ -19,6 +19,7 @@ namespace SocioleeMarkingApi.Controllers
 		private readonly IUserService _userService;
 		private readonly IUniqueIds _uniqueIds;
 		private readonly IConfiguration _configuration;
+
 		//private readonly ILogger<UsersController> _logger;
 
 		public BlobStorageController(IBlobStorageService authService, IContentService contentService, IUserService userService, IUniqueIds uniqueIds, IConfiguration configuration)
@@ -73,6 +74,7 @@ namespace SocioleeMarkingApi.Controllers
 
 			return Ok(new { path = toReturn });
 		}
+
 
 		//[HttpPost("UploadMessageAsset")]
 		//public async Task<IActionResult> UploadMessageAsset([FromQuery]Guid requestId, [FromQuery] Guid messageId, [FromQuery]string container, [FromQuery] bool reviewDesign)
@@ -174,13 +176,13 @@ namespace SocioleeMarkingApi.Controllers
 			return Ok();
 		}
 
-		//[HttpDelete("deleteReviewAsset")]
-		//public async Task<IActionResult> DeleteReviewAssetAsync(Guid reviewAssetId, string path)
-		//{
-		//	await _BlobStorageService.DeleteBlob(path);
-		//	var removed = await _ReviewService.DeleteReviewImage(reviewAssetId);
-		//	return Ok(removed);
-		//}
+		[HttpPost("deleteProjectFileAsset")]
+		public async Task<IActionResult> DeleteProjectFileAsset([FromBody] DeleteStudentProjectFileDTO projectFile)
+		{
+			await _BlobStorageService.DeleteBlob(projectFile.Url);
+			var removed = await _ContentService.DeleteProjectFile(projectFile);
+			return Ok(removed);
+		}
 
 	}
 }

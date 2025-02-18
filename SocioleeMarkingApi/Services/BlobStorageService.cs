@@ -20,7 +20,6 @@ namespace SocioleeMarkingApi.Services
 		Task<Uri> UploadFileBlobAsync(string blobContainerName, Stream content, string contentType, string fileName);
 		Task<bool> DownloadBlob(string url);
 		Task<int> GetDesignIndex(Guid requestId);
-
 	}
 	public class BlobStorageService : IBlobStorageService
 	{

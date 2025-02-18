@@ -33,7 +33,7 @@ namespace SocioleeMarkingApi.Services
 		Task<bool> UpsertStudent(UpsertStudentDTO studentDTO, bool editStudent);
 		Task<IEnumerable<Programme>> GetProgrammes(Guid institutionId);
 		Task<bool> DeleteStudent(Guid studentId);
-		Task<StudentDTO> GetStudentDetails(Guid studentUserId);
+		Task<StudentDTO> GetStudentDetails(Guid studentUserId, bool fromStudentUserId);
 		Task<UserAnalytics> UserAnalytics(Guid studentId);
 	}
     public class UserService : IUserService
@@ -265,10 +265,25 @@ namespace SocioleeMarkingApi.Services
 			await _db.SaveChangesAsync();
 		}
 
-		public async Task<Models.StudentDTO> GetStudentDetails(Guid studentUserId)
+		public async Task<StudentDTO> GetStudentDetails(Guid studentUserId, bool fromStudentUserId)
 		{
-			var students = await _db.Students
-				.Where(x => x.Id == studentUserId)
+			IQueryable<Student> studentQueryable;
+
+			if (fromStudentUserId)
+			{
+				studentQueryable = _db.Users
+					.Where(x => x.Id == studentUserId)
+					.SelectMany(x => x.Students) // Flatten the Students collection
+					.AsQueryable();
+			}
+			else
+			{
+				studentQueryable = _db.Students
+					.Where(x => x.Id == studentUserId)
+					.AsQueryable();
+			}
+
+			var students = await studentQueryable
 				.Include(u => u.StudentProgrammes)
 						.ThenInclude(sc => sc.InstitutionProgramme)
 				.Include(x => x.User)

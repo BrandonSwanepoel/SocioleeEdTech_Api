@@ -8,12 +8,13 @@
 		public bool IsAdmin { get; set; }
 		public Guid RoleId { get; set; }
 		public Guid InstitutionId { get; set; }
+		public Guid? StudentId { get; set; }
 		public string AuthenticationToken { get; set; } = string.Empty;
 		public string RefreshToken { get; set; } = string.Empty;
 		public DateTime? RefreshTokenExpires { get; set; }
 		public bool NotVerified { get; set; }
 
-		public SignInResponse(Guid id, string username,string email, bool isAdmin, Guid roleId, Guid institutionId, string authenticationToken, string refreshToken, DateTime refreshTokenExpires, bool notVerified)
+		public SignInResponse(Guid id, string username,string email, bool isAdmin, Guid roleId, Guid institutionId, Guid? studentId, string authenticationToken, string refreshToken, DateTime refreshTokenExpires, bool notVerified)
 		{
 			Id = id;
 			Username = username;
@@ -21,6 +22,7 @@
 			IsAdmin = isAdmin;
 			RoleId = roleId;
 			InstitutionId = institutionId;
+			StudentId = studentId;
 			AuthenticationToken = authenticationToken;
 			RefreshToken = refreshToken;
 			RefreshTokenExpires = refreshTokenExpires;

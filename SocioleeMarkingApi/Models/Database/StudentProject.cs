@@ -33,6 +33,8 @@ public partial class StudentProject
 
     public virtual InstitutionProgramme InstitutionProgramme { get; set; } = null!;
 
+    public virtual ICollection<ProjectFile> ProjectFiles { get; } = new List<ProjectFile>();
+
     public virtual ICollection<ProjectRubricStudentMark> ProjectRubricStudentMarks { get; } = new List<ProjectRubricStudentMark>();
 
     public virtual ICollection<ProjectRubric> ProjectRubrics { get; } = new List<ProjectRubric>();

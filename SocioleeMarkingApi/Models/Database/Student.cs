@@ -15,6 +15,8 @@ public partial class Student
 
     public virtual Institution Institution { get; set; } = null!;
 
+    public virtual ICollection<ProjectFile> ProjectFiles { get; } = new List<ProjectFile>();
+
     public virtual ICollection<ProjectRubricStudentMark> ProjectRubricStudentMarks { get; } = new List<ProjectRubricStudentMark>();
 
     public virtual ICollection<ProjectRubricsOfStudent> ProjectRubricsOfStudents { get; } = new List<ProjectRubricsOfStudent>();

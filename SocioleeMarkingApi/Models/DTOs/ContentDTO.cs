@@ -137,12 +137,14 @@ namespace SocioleeMarkingApi.Models
 		public StudentDTO(User user, Student student, IEnumerable<Programme> Programmes)
 		{
 			Id = student.Id;
+			UserId = user.Id;
 			Name = user.FullName;
 			Year = student.Year;
 			Programme = Programmes;
 			Email = user.Email;
 		}
 		public Guid Id { get; set; }
+		public Guid UserId { get; set; }
 		public string Name { get; set; } = null!;
 		public int Year { get; set; }
 		public IEnumerable<Programme> Programme { get; set; } = null!;
@@ -262,6 +264,30 @@ namespace SocioleeMarkingApi.Models
 		public DateTime? StartDateTime { get; set; }
 		public DateTime? EndDateTime { get; set; }
 		public Guid CreatedBy { get; set; }
+	}
+
+	public class UpsertStudentProjectFileDTO
+	{
+		public Guid ProjectId { get; set; }
+		public Guid StudentId { get; set; }
+		public List<IFormFile> Files { get; set; } = new List<IFormFile>(); // Handle multiple files
+		public List<string> Names { get; set; } = new List<string>();
+	}
+
+	public class DeleteStudentProjectFileDTO
+	{
+		public Guid ProjectId { get; set; }
+		public Guid StudentId { get; set; }
+		public string Url { get; set; } = null!;
+		public IFormFile File { get; set; } = null!;
+	}
+
+	public class StudentProjectFileDTO
+	{
+		public Guid Id { get; set; }
+		public string Name { get; set; } = null!;
+		public string Type { get; set; } = null!;
+		public DateTime LastUpdated { get; set; }
 	}
 
 	public class ProjectStudent

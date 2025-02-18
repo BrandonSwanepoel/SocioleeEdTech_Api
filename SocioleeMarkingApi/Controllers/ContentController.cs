@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SocioleeMarkingApi.Models;
 using SocioleeMarkingApi.Models.Database;
 using SocioleeMarkingApi.Services;
 
@@ -293,6 +294,28 @@ namespace SocioleeMarkingApi.Controllers
 		{
 			var saved = await _ContentService.SaveRubricForProject(projectRubricDTO);
 			return Ok(saved);
+		}
+
+		[HttpPost("upsertProjectFiles")]
+		[ProducesResponseType(typeof(Task<bool>), 200)]
+		public async Task<IActionResult> UpsertProjectFiles([FromForm] UpsertStudentProjectFileDTO projectFiles)
+		{
+
+			if (projectFiles.Files == null || projectFiles.Files.Count == 0)
+			{
+				return BadRequest("No files uploaded.");
+			}
+
+			var saved = await _ContentService.UpsertProjectFiles(projectFiles);
+			return Ok(saved);
+		}
+
+		[HttpGet("getProjectFiles")]
+		[ProducesResponseType(typeof(Task<bool>), 200)]
+		public async Task<IActionResult> GetProjectFiles([FromQuery] Guid projectId, [FromQuery] Guid studentId)
+		{
+			var projectFiles = await _ContentService.GetProjectFiles(projectId, studentId);
+			return Ok(projectFiles);
 		}
 	}
 }

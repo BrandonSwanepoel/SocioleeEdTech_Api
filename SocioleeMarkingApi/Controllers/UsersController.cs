@@ -115,9 +115,9 @@ namespace SocioleeMarkingApi.Controllers
 
 		[HttpGet("getStudentDetails")]
 		[ProducesResponseType(typeof(Student), 200)]
-		public async Task<IActionResult> GetStudentDetails(Guid studentUserId)
+		public async Task<IActionResult> GetStudentDetails(Guid studentUserId, [FromQuery] bool fromStudentUserId)
 		{
-			var studentDetails = await _UserService.GetStudentDetails(studentUserId);
+			var studentDetails = await _UserService.GetStudentDetails(studentUserId, fromStudentUserId);
 			return Ok(studentDetails);
 		}
 

@@ -51,6 +51,8 @@ public partial class SocioleeDesignContext : DbContext
 
     public virtual DbSet<PaymentRequest> PaymentRequests { get; set; }
 
+    public virtual DbSet<ProjectFile> ProjectFiles { get; set; }
+
     public virtual DbSet<ProjectRubric> ProjectRubrics { get; set; }
 
     public virtual DbSet<ProjectRubricStudentMark> ProjectRubricStudentMarks { get; set; }
@@ -369,6 +371,32 @@ public partial class SocioleeDesignContext : DbContext
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__PaymentRe__UserI__11158940");
+        });
+
+        modelBuilder.Entity<ProjectFile>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__ProjectF__3214EC078A6FF284");
+
+            entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Name)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.Type)
+                .HasMaxLength(255)
+                .IsUnicode(false);
+            entity.Property(e => e.UpdatedAt)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.Project).WithMany(p => p.ProjectFiles)
+                .HasForeignKey(d => d.ProjectId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ProjectFiles_ProjectId");
+
+            entity.HasOne(d => d.Student).WithMany(p => p.ProjectFiles)
+                .HasForeignKey(d => d.StudentId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ProjectFiles_StudentId");
         });
 
         modelBuilder.Entity<ProjectRubric>(entity =>
